@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Gatsyby Startbootstrap Agency",
+  title: "Quadratic Sound",
   keywords: [
     "gatsby",
     "gatsbyjs",
@@ -8,10 +8,9 @@ module.exports = {
     "i18n",
     "eslint",
     "bootstrap",
-    "startbootstrap-agency",
   ],
-  description: "gatsby version of startbootstrap-agency with i18n support.",
-  author: "thundermiracle",
+  description: "Studio Rentals & Multimedia Services",
+  author: "nanstey",
   trackingId: "UA-119418003-5",
   defaultLang: "en",
   langTextMap: {
