@@ -63,6 +63,7 @@ export const query = graphql`
           }
           social {
             facebook
+            instagram
             github
             linkedin
             medium
@@ -74,6 +75,7 @@ export const query = graphql`
             imageFileName
             social {
               facebook
+              instagram
               github
               linkedin
               medium
@@ -82,8 +84,6 @@ export const query = graphql`
             subheader
           }
           telephone
-          termsHref
-          termsText
           title
           timeline {
             content

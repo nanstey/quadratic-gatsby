@@ -1,12 +1,9 @@
 ---
-copyright: "Copyright © Start Bootstrap 2020"
+copyright: "Copyright © Quadratic Sound 2020"
 social: {
-  twitter: "#",
-  facebook: "#",
-  medium: "#"
+  facebook: "QuadraticSound",
+  instagram: "quadraticsound",
 }
-privacyText: "Privacy Policy"
-privacyHref: "#!"
-termsText: "Terms of Use"
-termsHref: "#!"
+privacyText: "Privacy Policy" 
+privacyHref: "https://www.privacypolicyonline.com/live.php?token=cBfscoPGfE8jYvXdbG3QlhkDBtM5AnDw"
 ---
