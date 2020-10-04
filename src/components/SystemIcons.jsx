@@ -11,6 +11,7 @@ import {
 import {
   faTwitter,
   faFacebookF,
+  faInstagram,
   faLinkedinIn,
   faGithubAlt,
   faMediumM,
@@ -27,6 +28,7 @@ export const LanguageIcon = makeFAIcon(faGlobe);
 
 export const TwitterIcon = makeFAIcon(faTwitter);
 export const FacebookIcon = makeFAIcon(faFacebookF);
+export const InstagramIcon = makeFAIcon(faInstagram);
 export const LinkedinIcon = makeFAIcon(faLinkedinIn);
 
 export * from "config/CustomIcons";
