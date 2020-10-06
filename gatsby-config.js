@@ -24,7 +24,7 @@ module.exports = {
         background_color: "#ffffff",
         theme_color: "#fed136",
         display: "minimal-ui",
-        icon: "content/assets/quadratic-logo-color.png",
+        icon: "content/assets/quadratic-favicon-color.png",
       },
     },
     "gatsby-transformer-remark",
