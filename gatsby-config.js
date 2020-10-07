@@ -63,6 +63,10 @@ module.exports = {
             variants: [400, 700],
           },
           {
+            family: "Almarai",
+            variants: [300, 400, 700, 800],
+          },
+          {
             family: "Kaushan+Script",
           },
           {

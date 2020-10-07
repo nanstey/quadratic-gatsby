@@ -9,11 +9,12 @@ import useWindowOnScroll from "hooks/useWindowOnScroll";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import Icon from "components/Icon";
 import NavItem from "components/NavItem";
+import Image from "components/Image";
 
 import "./Navbar.scss";
 
 const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
-  const { brand, menuText } = frontmatter;
+  const { brand, menuText, navBar } = frontmatter;
 
   const handleScrollToTop = useSmoothScrollTo(0);
 
@@ -45,7 +46,9 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
     >
       <Container>
         <Navbar.Brand className="cursor-pointer" onClick={handleBrandClick}>
-          {brand}
+          <div className='navbar-brand-icon'>
+            <Image fileName={navBar.imageFileName} alt="" />
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleMenu} aria-label="Toggle navigation">
           {menuText}
