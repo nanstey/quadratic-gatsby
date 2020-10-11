@@ -1,22 +1,22 @@
 ---
 anchor: "Services"
 header: "Services"
-subheader: "Lorem ipsum dolor sit amet consectetur."
+subheader: "Here's what we do:"
 services: [
   {
-    iconName: "ShoppingCartIcon",
-    header: "E-Commerce",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    iconName: "MicrophoneIcon",
+    header: "Studio Rentals",
+    content: "Our boutique music studio is outfitted with cutting edge audio reactive lighting. It's the perfect spot for your weekly rehearsals, live recording, or private events."
   },
   {
     iconName: "LaptopIcon",
-    header: "Responsive Design",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    header: "Coworking Space",
+    content: "During the day our bright front-facing office area is a coworking space, conveniently located downtown Victoria."
   },
   {
-    iconName: "LockIcon",
-    header: "Web Security",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    iconName: "VideoIcon",
+    header: "Multimedia Services",
+    content: "Live recording, video production, photography and more! Whatever your needs our talented team will make it happen."
   }
 ]
 ---
