@@ -75,6 +75,7 @@ export const query = graphql`
           subheader
           teamMember {
             header
+            key
             imageFileName
             social {
               facebook

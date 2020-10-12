@@ -16,3 +16,9 @@
     margin-top: 0;
   }
 }
+
+@media (min-width: 992px) {
+  .team-member {
+    min-width: 260px;
+  }
+}

@@ -1,37 +1,62 @@
 ---
 anchor: "Team"
 header: "Our Amazing Team"
-subheader: "Lorem ipsum dolor sit amet consectetur."
-content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde."
+subheader: "A unique assembly of human beings"
+content: "These people sure know how to do stuff good."
 teamMember: [
   {
-    imageFileName: "team/1.jpg",
-    header: "Kay Garland",
-    subheader: "Lead Designer",
+    imageFileName: "team/noel.jpg",
+    header: "Noel Anstey",
+    key: "noel",
+    subheader: "Founder, Studio Manager",
     social: {
-      twitter: "#",
-      facebook: "#",
-      linkedin: "#"
+      instagram: "noelanstey",
+      facebook: "AnsteyMusic",
+      linkedin: "noelanstey"
     }
   },
   {
-    imageFileName: "team/2.jpg",
-    header: "Larry Parker",
-    subheader: "Lead Marketer",
+    imageFileName: "team/dave.jpeg",
+    header: "David Schwab",
+    key: "dave",
+    subheader: "Founder, Business Administration",
     social: {
-      twitter: "#",
-      facebook: "#",
-      medium: "#"
+      instagram: "unused_lemons",
+      facebook: "david.schwab2",
+      linkedin: "david-schwab-b35b9372"
     }
   },
   {
-    imageFileName: "team/3.jpg",
-    header: "Diana Pertersen",
-    subheader: "Lead Developer",
+    imageFileName: "team/shane.jpg",
+    header: "Shane Battley",
+    key: "shane",
+    subheader: "Production Manager",
     social: {
-      twitter: "#",
-      facebook: "#",
-      medium: "#"
+      instagram: "shane_blaq",
+      facebook: "shane.battley.1",
+      linkedin: "shane-battley-811a5333"
+    }
+  },
+  {
+    imageFileName: "team/emily.jpg",
+    header: "Emily Mahbobi",
+    key: "emily",
+    subheader: "Community Engagement",
+    social: {
+      instagram: "emahbobi",
+      facebook: "emahbobi",
+      twitter: "emilymahbobi"
+    }
+  },
+  {
+    imageFileName: "team/lee.jpg",
+    header: "Lee Gauthier",
+    key: "lee",
+    subheader: "Lead Technician",
+    social: {
+      instagram: "",
+      facebook: "lee.gauthier",
+      linkedin: ""
     }
   },
 ]
