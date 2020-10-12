@@ -7,6 +7,7 @@ teamMember: [
   {
     imageFileName: "team/1.jpg",
     header: "Noel Anstey",
+    key: "noel",
     subheader: "Founder, Studio Manager",
     social: {
       instagram: "noelanstey",
@@ -17,7 +18,8 @@ teamMember: [
   {
     imageFileName: "team/2.jpg",
     header: "David Schwab",
-    subheader: "Founder, Facilities Manager",
+    key: "dave",
+    subheader: "Founder, Business Administration",
     social: {
       instagram: "unused_lemons",
       facebook: "david.schwab2",
@@ -27,6 +29,7 @@ teamMember: [
   {
     imageFileName: "team/3.jpg",
     header: "Shane Battley",
+    key: "shane",
     subheader: "Production Manager",
     social: {
       instagram: "shane_blaq",
@@ -37,6 +40,7 @@ teamMember: [
   {
     imageFileName: "team/3.jpg",
     header: "Emily Mahbobi",
+    key: "emily",
     subheader: "Community Engagement",
     social: {
       instagram: "emahbobi",
@@ -47,6 +51,7 @@ teamMember: [
   {
     imageFileName: "team/3.jpg",
     header: "Lee Gauthier",
+    key: "lee",
     subheader: "Lead Technician",
     social: {
       instagram: "",
