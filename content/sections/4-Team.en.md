@@ -6,32 +6,52 @@ content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, l
 teamMember: [
   {
     imageFileName: "team/1.jpg",
-    header: "Kay Garland",
-    subheader: "Lead Designer",
+    header: "Noel Anstey",
+    subheader: "Founder, Studio Manager",
     social: {
-      twitter: "#",
-      facebook: "#",
-      linkedin: "#"
+      instagram: "noelanstey",
+      facebook: "AnsteyMusic",
+      linkedin: "noelanstey"
     }
   },
   {
     imageFileName: "team/2.jpg",
-    header: "Larry Parker",
-    subheader: "Lead Marketer",
+    header: "David Schwab",
+    subheader: "Founder, Facilities Manager",
     social: {
-      twitter: "#",
-      facebook: "#",
-      medium: "#"
+      instagram: "unused_lemons",
+      facebook: "david.schwab2",
+      linkedin: "david-schwab-b35b9372"
     }
   },
   {
     imageFileName: "team/3.jpg",
-    header: "Diana Pertersen",
-    subheader: "Lead Developer",
+    header: "Shane Battley",
+    subheader: "Production Manager",
     social: {
-      twitter: "#",
-      facebook: "#",
-      medium: "#"
+      instagram: "shane_blaq",
+      facebook: "shane.battley.1",
+      linkedin: "shane-battley-811a5333"
+    }
+  },
+  {
+    imageFileName: "team/3.jpg",
+    header: "Emily Mahbobi",
+    subheader: "Community Engagement",
+    social: {
+      instagram: "emahbobi",
+      facebook: "emahbobi",
+      twitter: "emilymahbobi"
+    }
+  },
+  {
+    imageFileName: "team/3.jpg",
+    header: "Lee Gauthier",
+    subheader: "Lead Technician",
+    social: {
+      instagram: "",
+      facebook: "lee.gauthier",
+      linkedin: ""
     }
   },
 ]
