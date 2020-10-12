@@ -27,7 +27,7 @@ const Team = ({ className, frontmatter }) => {
       </Row>
       <Row>
         {teamMember.map(({ key, header, ...tmProps }) => (
-          <Col fluid={true} key={key}>
+          <Col key={key}>
             <TeamMember header={header} {...tmProps} />
           </Col>
         ))}

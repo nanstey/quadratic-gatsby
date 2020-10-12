@@ -5,7 +5,7 @@ subheader: "A unique assembly of human beings"
 content: "These people sure know how to do stuff good."
 teamMember: [
   {
-    imageFileName: "team/1.jpg",
+    imageFileName: "team/noel.jpg",
     header: "Noel Anstey",
     key: "noel",
     subheader: "Founder, Studio Manager",
@@ -16,7 +16,7 @@ teamMember: [
     }
   },
   {
-    imageFileName: "team/2.jpg",
+    imageFileName: "team/dave.jpeg",
     header: "David Schwab",
     key: "dave",
     subheader: "Founder, Business Administration",
@@ -27,7 +27,7 @@ teamMember: [
     }
   },
   {
-    imageFileName: "team/3.jpg",
+    imageFileName: "team/shane.jpg",
     header: "Shane Battley",
     key: "shane",
     subheader: "Production Manager",
@@ -38,7 +38,7 @@ teamMember: [
     }
   },
   {
-    imageFileName: "team/3.jpg",
+    imageFileName: "team/emily.jpg",
     header: "Emily Mahbobi",
     key: "emily",
     subheader: "Community Engagement",
@@ -49,7 +49,7 @@ teamMember: [
     }
   },
   {
-    imageFileName: "team/3.jpg",
+    imageFileName: "team/lee.jpg",
     header: "Lee Gauthier",
     key: "lee",
     subheader: "Lead Technician",
