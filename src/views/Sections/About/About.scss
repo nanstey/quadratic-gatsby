@@ -3,20 +3,20 @@
   position: relative;
   padding: 0;
   list-style: none;
-  &:before {
-    position: absolute;
-    top: 150px;
-    bottom: 50px;
-    left: 40px;
-    width: 2px;
-    margin-left: -1.5px;
-    content: "";
-    background-color: $gray-200;
-  }
+
 }
-@media (min-width: 1200px) {
-  .timeline:before {
-    top: 200px;
+@media (min-width: 768px) {
+  .timeline {
+    &:before {
+      position: absolute;
+      top: 150px;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      margin-left: -1.5px;
+      content: "";
+      background-color: $gray-200;
+    }
   }
 }
 @media (min-width: 992px) {
@@ -24,10 +24,8 @@
     background-color: $gray-200;
   }
 }
-@media (min-width: 768px) {
-  .timeline {
-    &:before {
-      left: 50%;
-    }
+@media (min-width: 1200px) {
+  .timeline:before {
+    top: 200px;
   }
 }

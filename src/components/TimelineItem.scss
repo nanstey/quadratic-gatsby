@@ -1,7 +1,7 @@
 .timeline-item {
   position: relative;
-  min-height: 50px;
-  margin-bottom: 50px;
+  min-height: 440px;
+  margin-bottom: 30px;
   &:after,
   &:before {
     display: table;
@@ -12,10 +12,12 @@
   }
   .timeline-panel {
     position: relative;
+    display: block;
     float: right;
     width: 100%;
-    padding: 0 20px 0 100px;
-    text-align: left;
+    padding: 0;
+    text-align: center;
+    top: 10px;
     &:before {
       right: auto;
       left: -15px;
@@ -30,27 +32,25 @@
     }
   }
   .timeline-image {
-    position: absolute;
+    position: relative;
     z-index: 100;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    margin-left: 0;
+    top: 0;
+    width: 300px;
+    height: 300px;
+    margin: auto;
     text-align: center;
     color: white;
     border: 7px solid $gray-200;
     border-radius: 100%;
     background-color: $primary;
     h4 {
-      font-size: 10px;
-      line-height: 14px;
-      margin-top: 12px;
+      font-size: 34px;
+      line-height: 40px;
+      margin-top: 45px;
     }
   }
   &.timeline-inverted > .timeline-panel {
     float: right;
-    padding: 0 20px 0 100px;
-    text-align: left;
     &:before {
       right: auto;
       left: -15px;
@@ -65,7 +65,14 @@
     }
   }
   &:last-child {
+    margin-top: 50px;
     margin-bottom: 0;
+    min-height: 0;
+    .timeline-image {
+      width: 225px;
+      height: 225px;
+      margin: auto;
+    }
   }
 }
 .timeline-heading {
@@ -83,6 +90,13 @@
     margin-bottom: 0;
   }
 }
+@media (min-width: 576px) {
+  .timeline-item {
+    .timeline-image {
+      margin-left: 100px;
+    }
+  }
+}
 @media (min-width: 768px) {
   .timeline-item {
     min-height: 220px;
@@ -96,15 +110,13 @@
       top: 30px;
     }
     .timeline-image {
+      position: absolute;
+      top: 0;
       left: 50%;
       width: 300px;
       height: 300px;
       margin-left: -2px;
-      h4 {
-        font-size: 34px;
-        line-height: 40px;
-        margin-top: 50px;
-      }
+
     }
     &.timeline-inverted > .timeline-image {
       margin-left: -300px;
@@ -115,10 +127,15 @@
       text-align: left;
       right: -40px;
     }
-    &:last-child >.timeline-image {
-      width: 240px;
-      height: 240px;
-      margin-left: -120px;
+    &:last-child {
+      margin-top: 0;
+      margin-bottom: 0;
+      min-height: 240px;
+      .timeline-image {
+        width: 240px;
+        height: 240px;
+        margin-left: -120px;
+      }
     }
   }
 }
