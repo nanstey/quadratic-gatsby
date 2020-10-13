@@ -22,7 +22,7 @@ module.exports = {
         short_name: "Agency",
         start_url: "/",
         background_color: "#ffffff",
-        theme_color: "#fed136",
+        theme_color: "#f6961d",
         display: "minimal-ui",
         icon: "content/assets/quadratic-favicon-color.png",
       },
