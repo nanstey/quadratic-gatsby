@@ -33,13 +33,14 @@ h6 {
 
 // Highlight color customization
 ::-moz-selection {
-  background: $primary;
+  background: $secondary;
   text-shadow: none;
 }
 
 ::selection {
-  background: $primary;
+  background: $secondary;
   text-shadow: none;
+  color: white;
 }
 
 img::selection {
