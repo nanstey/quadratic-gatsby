@@ -33,10 +33,6 @@ export const query = graphql`
         frontmatter {
           brand
           anchor
-          clients {
-            href
-            imageFileName
-          }
           content
           copyright
           header
@@ -73,6 +69,7 @@ export const query = graphql`
             twitter
           }
           subheader
+          callToAction
           teamMember {
             header
             key
