@@ -113,41 +113,43 @@
 }
 @media (min-width: 992px) {
   .timeline-item {
-    min-height: 150px;
+    min-height: 220px;
     .timeline-panel {
-      padding: 0 20px 20px;
+      padding: 0 50px 0 0;
+      margin-top: 20px;
     }
     .timeline-image {
-      width: 150px;
-      height: 150px;
-      margin-left: -75px;
+      width: 240px;
+      height: 240px;
+      margin-left: -120px;
       h4 {
-        font-size: 18px;
-        line-height: 26px;
-        margin-top: 30px;
+        font-size: 34px;
+        line-height: 40px;
+        margin-top: 50px;
       }
     }
     &.timeline-inverted > .timeline-panel {
-      padding: 0 20px 20px;
+      padding: 0 0 0 50px;
     }
   }
 }
 @media (min-width: 1200px) {
   .timeline-item {
-    min-height: 170px;
+    min-height: 20px;
     .timeline-panel {
-      padding: 0 20px 20px 100px;
+      padding: 0 80px 20px 0;
+      margin-top: 40px;
     }
     .timeline-image {
-      width: 170px;
-      height: 170px;
-      margin-left: -85px;
+      width: 300px;
+      height: 300px;
+      margin-left: -150px;
       h4 {
         margin-top: 40px;
       }
     }
     &.timeline-inverted > .timeline-panel {
-      padding: 0 100px 20px 20px;
+      padding: 0 0 20px 80px;
     }
   }
 }
