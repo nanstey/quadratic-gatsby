@@ -69,6 +69,7 @@ export const query = graphql`
             twitter
           }
           subheader
+          callToAction
           teamMember {
             header
             key
