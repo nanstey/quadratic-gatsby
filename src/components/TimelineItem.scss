@@ -124,16 +124,31 @@
 }
 @media (min-width: 992px) {
   .timeline-item {
-    min-height: 200px;
+    min-height: 220px;
     .timeline-panel {
       padding: 0 50px 0 0;
       right: -40px;
-      top: 40px;
+      top: 60px;
       width: 48%;
     }
     &.timeline-inverted > .timeline-panel {
       padding: 0 0 0 50px;
       right: 40px;
+    }
+    .timeline-image {
+      left: 50%;
+      width: 350px;
+      height: 350px;
+      margin-left: -2px;
+    }
+    &.timeline-inverted > .timeline-image {
+      margin-left: -350px;
+    }
+    &:last-child >.timeline-image {
+      width: 240px;
+      height: 240px;
+      margin-left: -120px;
+      margin-top: 40px;
     }
   }
 }
