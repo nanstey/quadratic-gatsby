@@ -5,12 +5,17 @@
   list-style: none;
   &:before {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 150px;
+    bottom: 50px;
     left: 40px;
     width: 2px;
     margin-left: -1.5px;
     content: "";
+    background-color: $gray-200;
+  }
+}
+@media (min-width: 992px) {
+  .timeline:before {
     background-color: $gray-200;
   }
 }
