@@ -1,55 +1,49 @@
 ---
 anchor: "Portfolio"
 header: "Portfolio"
-subheader: "Lorem ipsum dolor sit amet consectetur."
+subheader: "Here are some of the projects we've worked on"
 portfolios: [
   {
-    imageFileName: "portfolio/01-thumbnail.jpg",
-    imageFileNameDetail: "portfolio/01-full.jpg",
-    header: "Threads",
-    subheader: "Illustration",
-    content: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!",
-    extraInfo: ["Date: January 2017", "Client: Threads", "Category: Illustration"]
+    type: 'youtube',
+    imageFileName: "portfolio/adrian.jpg",
+    youtubeLink: 'https://www.youtube.com/watch?v=PEazAuM-Ayw',
+    header: "Adrian Chalifour",
+    subheader: "Video",
   },
   {
-    imageFileName: "portfolio/02-thumbnail.jpg",
-    imageFileNameDetail: "portfolio/02-full.jpg",
-    header: "Explorer",
-    subheader: "Graphic Design",
-    content: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!",
-    extraInfo: ["Date: January 2017", "Client: Explorer", "Category: Graphic Design"]
+    type: 'youtube',
+    imageFileName: "portfolio/notw.jpg",
+    youtubeLink: 'https://www.youtube.com/watch?v=3alYw2MZ8RE',
+    header: "Neck of the Woods",
+    subheader: "Video",
   },
   {
-    imageFileName: "portfolio/03-thumbnail.jpg",
-    imageFileNameDetail: "portfolio/03-full.jpg",
-    header: "Finish",
-    subheader: "Identity",
-    content: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!",
-    extraInfo: ["Date: January 2017", "Client: Finish", "Category: Identity"]
+    type: 'youtube',
+    imageFileName: "portfolio/electric-sex-panther.jpg",
+    youtubeLink: 'https://www.youtube.com/watch?v=Wm3G7lsu59Q',
+    header: "Electric Sex Panther",
+    subheader: "Video",
   },
   {
-    imageFileName: "portfolio/04-thumbnail.jpg",
-    imageFileNameDetail: "portfolio/04-full.jpg",
-    header: "Lines",
-    subheader: "Branding",
-    content: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!",
-    extraInfo: ["Date: January 2017", "Client: Lines", "Category: Branding"]
+    type: 'bandcamp',
+    imageFileName: "portfolio/scimitar.jpg",
+    bandcampId: '3071349395',
+    header: "Scimitar",
+    subheader: "Album",
   },
   {
-    imageFileName: "portfolio/05-thumbnail.jpg",
-    imageFileNameDetail: "portfolio/05-full.jpg",
-    header: "Southwest",
-    subheader: "Website Design",
-    content: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!",
-    extraInfo: ["Date: January 2017", "Client: Southwest", "Category: Website Design"]
+    type: 'bandcamp',
+    imageFileName: "portfolio/dryspell.jpg",
+    bandcampId: '10067041',
+    header: "Dryspell",
+    subheader: "Album",
   },
   {
-    imageFileName: "portfolio/06-thumbnail.jpg",
-    imageFileNameDetail: "portfolio/06-full.jpg",
-    header: "Window",
-    subheader: "Photography",
-    content: "Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!",
-    extraInfo: ["Date: January 2017", "Client: Window", "Category: Photography"]
-  }
+    type: 'youtube',
+    imageFileName: "portfolio/gardencity.jpg",
+    youtubeLink: 'https://www.youtube.com/watch?v=EWUCmD38X40',
+    header: "Garden City Disco",
+    subheader: "Video",
+  },
 ]
 ---

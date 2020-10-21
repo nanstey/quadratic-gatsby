@@ -45,12 +45,12 @@ export const query = graphql`
             imageFileName
           }
           portfolios {
-            content
-            extraInfo
+            type
             header
             subheader
-            imageFileNameDetail
             imageFileName
+            youtubeLink
+            bandcampId
           }
           privacyHref
           privacyText
