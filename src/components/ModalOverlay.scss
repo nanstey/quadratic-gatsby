@@ -2,4 +2,34 @@
 .modal-overlay .modal-content {
   border: 0;
   background: 0;
+
+  svg {
+    cursor: pointer;
+    color: white;
+  }
+
+  .close-icon > svg {
+    float: right;
+  }
+
+  .chevron {
+    
+    svg {
+      top: 50vh;
+      position: fixed;
+      color: black;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .chevron-left > svg {
+    left: 10vw;
+  }
+
+  .chevron-right > svg {
+    right: 10vw
+  }
 }
