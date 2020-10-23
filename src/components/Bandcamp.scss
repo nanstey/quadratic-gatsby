@@ -1,0 +1,21 @@
+// Styling for the bandcamp modal content
+.bandcamp-player > div{
+  width: 450px;
+  height: 704px;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .bandcamp-player > div{
+    width: 350px;
+    height: 604px;
+  }
+}
+
+@media (max-width: 375px) {
+  .bandcamp-player > div{
+    width: 300px;
+    height: 554px;
+  }
+}
+

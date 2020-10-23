@@ -3,31 +3,21 @@ import PropTypes from "prop-types";
 
 import { Col } from "react-bootstrap";
 
-import ModalOverlay from "components/ModalOverlay";
 import Image from "components/Image";
 import Icon from "components/Icon";
-import Video from "components/Video";
-import Bandcamp from "components/Bandcamp";
+
 
 import "./PortfolioItem.scss";
 
 const PortfolioItem = ({
-  type,
-  youtubeLink,
-  bandcampId,
-  imageFileName,
-  imageAlt,
-  header,
-  subheader,
+  item: {
+    imageFileName,
+    imageAlt,
+    header,
+    subheader,
+  },
+  setActive
 }) => {
-  const [showDetail, setShowDetail] = React.useState(false);
-  const handleShowDetail = React.useCallback(() => {
-    setShowDetail(true);
-  }, []);
-  const handleHideDetail = React.useCallback(() => {
-    setShowDetail(false);
-  }, []);
-
   return (
     <>
       <Col lg={4} md={6} className="portfolio-item">
@@ -36,7 +26,7 @@ const PortfolioItem = ({
           tabIndex={-1}
           className="portfolio-link"
           data-toggle="modal"
-          onClick={handleShowDetail}
+          onClick={setActive}
         >
           <Image
             className="img-fluid"
@@ -54,32 +44,18 @@ const PortfolioItem = ({
           {subheader ? <p className="text-muted">{subheader}</p> : null}
         </div>
       </Col>
-      <ModalOverlay
-        show={showDetail}
-        onHide={handleHideDetail}
-      >
-        {type === 'youtube' && <Video url={youtubeLink} />}
-        {type === 'bandcamp' && <Bandcamp id={bandcampId} />}
-      </ModalOverlay>
     </>
   );
 };
 
 PortfolioItem.propTypes = {
-  type: PropTypes.string.isRequired,
-  bandcampId: PropTypes.string,
-  youtubeLink: PropTypes.string,
-  imageFileName: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string,
-  header: PropTypes.string.isRequired,
-  subheader: PropTypes.string,
-};
-
-PortfolioItem.defaultProps = {
-  youtubeLink: "",
-  bandcampId: "",
-  imageAlt: "",
-  subheader: "",
+  item: PropTypes.shape({
+    imageFileName: PropTypes.string.isRequired,
+    imageAlt: PropTypes.string.isRequired,
+    header: PropTypes.string.isRequired,
+    subheader: PropTypes.string.isRequired,
+  }).isRequired,
+  setActive: PropTypes.func.isRequired,
 };
 
 export default PortfolioItem;

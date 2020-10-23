@@ -2,11 +2,12 @@ import React from "react"
 import PropTypes from "prop-types";
 import BandcampPlayer from 'react-bandcamp';
 
+import './Bandcamp.scss';
 
 function Bandcamp({ id }) {
   return (
     <div className="bandcamp-player">
-      <div style={{ width: '450px', height: '754px', margin: '0 auto' }} >
+      <div>
         <div style={{ width: 'auto', height: '100%' }} >
           <BandcampPlayer
             album={id}

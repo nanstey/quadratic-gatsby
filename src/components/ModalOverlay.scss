@@ -1,5 +1,47 @@
+@import "~bootstrap/scss/bootstrap";
+
 // Styling for the modal overlay
 .modal-overlay .modal-content {
   border: 0;
   background: 0;
+  padding: 0;
+
+  svg {
+    cursor: pointer;
+    color: white;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .close-icon > svg {
+    float: right;
+  }
+
+  .chevron {
+    svg {
+      top: 50vh;
+      position: fixed;
+    }
+  }
+
+  .chevron-left > svg {
+    left: 10vw;
+  }
+
+  .chevron-right > svg {
+    right: 10vw
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 0.7 !important;
+}
+
+@media (max-width: 576px) {
+  .chevron {
+    display: none;
+  }
 }

@@ -7,6 +7,8 @@ import {
   faBars,
   faTimes,
   faGlobe,
+  faChevronLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
@@ -24,6 +26,8 @@ export const BarsIcon = makeFAIcon(faBars);
 export const GithubIcon = makeFAIcon(faGithubAlt);
 export const MediumIcon = makeFAIcon(faMediumM);
 export const CloseIcon = makeFAIcon(faTimes);
+export const ChevronLeft = makeFAIcon(faChevronLeft);
+export const ChevronRight = makeFAIcon(faChevronRight);
 export const LanguageIcon = makeFAIcon(faGlobe);
 
 export const TwitterIcon = makeFAIcon(faTwitter);
