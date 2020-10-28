@@ -52,6 +52,10 @@ export const query = graphql`
             youtubeLink
             bandcampId
           }
+          book {
+            anchor
+            header
+          }
           privacyHref
           privacyText
           services {
