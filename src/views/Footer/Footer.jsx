@@ -13,7 +13,7 @@ const Footer = ({ frontmatter }) => {
     copyright,
     privacyHref,
     privacyText,
-    social: { facebook, instagram },
+    social: { facebook, instagram, youtube },
   } = frontmatter;
 
   return (
@@ -26,6 +26,7 @@ const Footer = ({ frontmatter }) => {
           <Col lg={4} className="my-3 my-lg-0">
             {facebook ? <SocialIcons.Facebook userName={facebook} /> : null}
             {instagram ? <SocialIcons.Instagram userName={instagram} /> : null}
+            {youtube ? <SocialIcons.Youtube userName={youtube} /> : null}
           </Col>
           <Col lg={4} className="text-lg-right">
             <a target="_blank" rel="noreferrer" className="mr-3" href={privacyHref}>

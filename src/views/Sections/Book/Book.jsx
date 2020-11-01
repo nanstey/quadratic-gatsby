@@ -22,7 +22,7 @@ const Book = ({ className, frontmatter }) => {
     return null;
   }
 
-  const { book: { anchor, header } } = frontmatter;
+  const { anchor, header } = frontmatter;
 
   return (
     <PageSection className={className} id={anchor}>

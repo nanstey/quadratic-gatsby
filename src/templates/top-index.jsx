@@ -52,10 +52,6 @@ export const query = graphql`
             youtubeLink
             bandcampId
           }
-          book {
-            anchor
-            header
-          }
           privacyHref
           privacyText
           services {
@@ -71,6 +67,7 @@ export const query = graphql`
             linkedin
             medium
             twitter
+            youtube
           }
           subheader
           callToAction
