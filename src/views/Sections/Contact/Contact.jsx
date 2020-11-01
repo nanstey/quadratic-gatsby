@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
+import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
 
@@ -10,7 +11,9 @@ const Contact = ({ className, frontmatter }) => {
     return null;
   }
 
-  const { anchor, header, subheader, callToAction, telephone, email } = frontmatter;
+  const { anchor, header, subheader, callToAction, telephone, email, jumpToAnchor, jumpToAnchorText } = frontmatter;
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const scrollToSection = useSmoothScrollTo(jumpToAnchor);
 
   return (
     <PageSection className={className} id={anchor}>
@@ -21,6 +24,13 @@ const Contact = ({ className, frontmatter }) => {
           <p className="text-muted">{subheader}</p>
           <p className="text-muted mb-5">{callToAction}</p>
         </Col>
+      </Row>
+      <Row className="justify-content-center mb-5">
+        <div style={{ textAlign: 'center' }}>
+          <Button size="xl" variant="primary" className="text-uppercase" onClick={scrollToSection}>
+            {jumpToAnchorText}
+          </Button>
+        </div>
       </Row>
       <Row>
         {telephone ? (

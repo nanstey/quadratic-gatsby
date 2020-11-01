@@ -35,7 +35,7 @@ ImageCard.propTypes = {
 ImageCard.defaultProps = {
   className: null,
   imageFileName: null,
-  imageAlt: null,
+  imageAlt: '',
   header: "",
   subheader: "",
   extraInfo: null,

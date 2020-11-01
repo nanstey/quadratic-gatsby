@@ -67,6 +67,7 @@ export const query = graphql`
             linkedin
             medium
             twitter
+            youtube
           }
           subheader
           callToAction
