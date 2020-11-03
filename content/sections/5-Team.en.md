@@ -41,7 +41,7 @@ teamMember: [
     imageFileName: "team/emily.jpg",
     header: "Emily Mahbobi",
     key: "emily",
-    subheader: "Community Engagement",
+    subheader: "Marketing & Community Engagement",
     social: {
       instagram: "emahbobi",
       facebook: "emahbobi",
@@ -57,6 +57,17 @@ teamMember: [
       instagram: "",
       facebook: "lee.gauthier",
       linkedin: ""
+    }
+  },
+  {
+    imageFileName: "team/jordie.jpg",
+    header: "Jordie Shier",
+    key: "jordie",
+    subheader: "Partner",
+    social: {
+      instagram: "",
+      facebook: "lee.gauthier",
+      linkedin: "jordie-shier-56423151"
     }
   },
 ]
