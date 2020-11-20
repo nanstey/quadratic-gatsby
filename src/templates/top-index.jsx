@@ -60,6 +60,14 @@ export const query = graphql`
             iconName
             imageFileName
           }
+          events {
+            contents
+            date
+            header
+            imageFileName
+            jumpToAnchor
+            jumpToAnchorText
+          }
           social {
             facebook
             instagram
