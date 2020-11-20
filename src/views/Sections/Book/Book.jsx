@@ -13,7 +13,7 @@ const Book = ({ className, frontmatter }) => {
     new DROPLET.Widget({
       host: 'quadraticsound.checkfront.com',
       target: 'CHECKFRONT_WIDGET',
-      options: 'category_select',
+      options: 'tabs',
       provider: 'droplet'
     }).render();
   });
