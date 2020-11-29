@@ -1,11 +1,8 @@
 {
-  "name": "gatsby-startbootstrap-agency",
-  "description": "gatsby version of startbootstrap-agency with i18n support",
+  "name": "quadratic-gatsby",
+  "description": "A website for Quadratic Sound built using Gatsby",
   "version": "0.1.0",
-  "author": "thundermiracle",
-  "bugs": {
-    "url": "https://github.com/thundermiracle/gatsby-startbootstrap-agency/issues"
-  },
+  "author": "nanstey",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
@@ -13,7 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "bootstrap": "^4.4.1",
     "clsx": "^1.1.0",
-    "gatsby": "^2.20.22",
+    "gatsby": "^2.27",
     "gatsby-image": "^2.3.2",
     "gatsby-plugin-google-analytics": "^2.0.18",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -61,7 +58,6 @@
     "gatsby-plugin-eslint": "^2.0.8",
     "prettier": "^2.0.4"
   },
-  "homepage": "https://thundermiracle.github.io/gatsby-startbootstrap-agency",
   "keywords": [
     "gatsby",
     "gatsbyjs",
@@ -76,7 +72,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thundermiracle/gatsby-startbootstrap-agency.git"
+    "url": "git+https://github.com/nanstey/quadratic-gatsby.git"
   },
   "scripts": {
     "clean": "gatsby clean",

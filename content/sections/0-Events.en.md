@@ -7,7 +7,8 @@ events: [
     header: "Kids Lego Robotics Camp",
     date: "Dec 20-24 | Dec 27-31",
     contents: [
-      "Come take your building skills to the next level while learning about gears, motors, and sensors. You will dive into the basics of engineering with a teammate and use LEGO(r) construction kits to build and program exciting interactive machines that move, react, and make sounds!",
+      "Watch your kids take their building skills to the next level while learning about gears, motors, and sensors. Children aged 7-14 will dive into the basics of engineering with a teammate and use LEGO(r) construction kits to build and program exciting interactive machines that move, react, and make sounds!",
+      "Covid protocols are in in place for the safety of all in attendance. LEGO kits are assigned one per team. Wearing masks is strongly encouraged."
     ],
     imageFileName: 'events/robo_banner.jpg',
     jumpToAnchor: "Book",
