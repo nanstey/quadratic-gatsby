@@ -17,14 +17,18 @@ const Events = ({ className, frontmatter }) => {
 
   const { anchor, header: rootHeader, subheader: rootSubHeader, events } = frontmatter;
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const scrollToSection = useSmoothScrollTo('Book');
+  const scrollToSection = useSmoothScrollTo("Book");
 
-  return (
+  const filteredEvents = events.filter((event) => {
+    return new Date(event.expiryDate) > new Date();
+  });
+
+  return filteredEvents.length ? (
     <PageSection className={className} id={anchor}>
       <Row>
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
-      {events.map((event) => (
+      {filteredEvents.map((event) => (
         <Row className="text-center event" key={event.header}>
           <Col lg={6}>
             <div className="event-image">
@@ -37,30 +41,25 @@ const Events = ({ className, frontmatter }) => {
             <div className="event-description">
               <h1>{event.header}</h1>
               <h3>{event.date}</h3>
-              {event.contents.map(
-                (paragraph) =>
-                  (
-                    <p key={paragraph}>{paragraph}</p>
-                  )
+              {event.contents.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              {event.jumpToAnchorText && (
+                <Button
+                  size="xl"
+                  variant="primary"
+                  className="text-uppercase"
+                  onClick={scrollToSection}
+                >
+                  {event.jumpToAnchorText}
+                </Button>
               )}
-              {
-                event.jumpToAnchorText && (
-                  <Button
-                    size="xl"
-                    variant="primary"
-                    className="text-uppercase"
-                    onClick={scrollToSection}
-                  >
-                    {event.jumpToAnchorText}
-                  </Button>
-                )
-              }
             </div>
           </Col>
         </Row>
       ))}
     </PageSection>
-  );
+  ) : null;
 };
 
 Events.propTypes = {
