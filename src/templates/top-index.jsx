@@ -63,6 +63,7 @@ export const query = graphql`
           events {
             contents
             date
+            expiryDate
             header
             imageFileName
             jumpToAnchor
@@ -125,10 +126,7 @@ const IndexPage = ({ data, pathContext: { langKey } }) => {
   return (
     <>
       <SEO lang={langKey} keywords={keywords} />
-      <Navbar
-        anchors={anchors}
-        frontmatter={navBarNode.frontmatter}
-      />
+      <Navbar anchors={anchors} frontmatter={navBarNode.frontmatter} />
       <Top frontmatter={topNode.frontmatter} />
       {
         // dynamically import sections
