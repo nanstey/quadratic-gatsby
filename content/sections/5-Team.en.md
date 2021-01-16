@@ -41,11 +41,11 @@ teamMember: [
     imageFileName: "team/emily.jpg",
     header: "Emily Mahbobi",
     key: "emily",
-    subheader: "Marketing & Community Engagement",
+    subheader: "Administration & Communications",
     social: {
       instagram: "emahbobi",
       facebook: "emahbobi",
-      twitter: "emilymahbobi"
+      linkedin: "emily-mahbobi-a15a111b9",
     }
   },
   {
@@ -66,7 +66,7 @@ teamMember: [
     subheader: "Partner",
     social: {
       instagram: "",
-      facebook: "lee.gauthier",
+      facebook: "jordie.shier",
       linkedin: "jordie-shier-56423151"
     }
   },
