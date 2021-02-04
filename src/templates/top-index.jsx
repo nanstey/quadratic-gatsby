@@ -17,101 +17,101 @@ import "../style/main.scss";
 /**
  * get file name list from content/sections folder
  */
-export const query = graphql`
-  query IndexQuery($langKey: String!) {
-    site {
-      siteMetadata {
-        keywords
-        description
-      }
-    }
-    allMarkdownRemark(
-      filter: { fields: { langKey: { eq: $langKey } } }
-      sort: { order: ASC, fields: [fields___directoryName, fields___fileName] }
-    ) {
-      nodes {
-        frontmatter {
-          brand
-          anchor
-          content
-          copyright
-          header
-          email
-          imageFileName
-          jumpToAnchor
-          jumpToAnchorText
-          menuText
-          navBar {
-            imageFileName
-          }
-          portfolios {
-            type
-            header
-            subheader
-            imageFileName
-            youtubeLink
-            bandcampId
-          }
-          privacyHref
-          privacyText
-          services {
-            content
-            header
-            iconName
-            imageFileName
-          }
-          events {
-            contents
-            date
-            expiryDate
-            header
-            imageFileName
-            jumpToAnchor
-            jumpToAnchorText
-          }
-          social {
-            facebook
-            instagram
-            github
-            linkedin
-            medium
-            twitter
-            youtube
-          }
-          subheader
-          callToAction
-          teamMember {
-            header
-            key
-            imageFileName
-            social {
-              facebook
-              instagram
-              github
-              linkedin
-              medium
-              twitter
-            }
-            subheader
-          }
-          telephone
-          title
-          timeline {
-            content
-            header
-            imageContent
-            imageFileName
-            subheader
-          }
-        }
-        fields {
-          fileName
-          directoryName
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query IndexQuery($langKey: String!) {
+//     site {
+//       siteMetadata {
+//         keywords
+//         description
+//       }
+//     }
+//     allMarkdownRemark(
+//       filter: { fields: { langKey: { eq: $langKey } } }
+//       sort: { order: ASC, fields: [fields___directoryName, fields___fileName] }
+//     ) {
+//       nodes {
+//         frontmatter {
+//           brand
+//           anchor
+//           content
+//           copyright
+//           header
+//           email
+//           imageFileName
+//           jumpToAnchor
+//           jumpToAnchorText
+//           menuText
+//           navBar {
+//             imageFileName
+//           }
+//           portfolios {
+//             type
+//             header
+//             subheader
+//             imageFileName
+//             youtubeLink
+//             bandcampId
+//           }
+//           privacyHref
+//           privacyText
+//           services {
+//             content
+//             header
+//             iconName
+//             imageFileName
+//           }
+//           events {
+//             contents
+//             date
+//             expiryDate
+//             header
+//             imageFileName
+//             jumpToAnchor
+//             jumpToAnchorText
+//           }
+//           social {
+//             facebook
+//             instagram
+//             github
+//             linkedin
+//             medium
+//             twitter
+//             youtube
+//           }
+//           subheader
+//           callToAction
+//           teamMember {
+//             header
+//             key
+//             imageFileName
+//             social {
+//               facebook
+//               instagram
+//               github
+//               linkedin
+//               medium
+//               twitter
+//             }
+//             subheader
+//           }
+//           telephone
+//           title
+//           timeline {
+//             content
+//             header
+//             imageContent
+//             imageFileName
+//             subheader
+//           }
+//         }
+//         fields {
+//           fileName
+//           directoryName
+//         }
+//       }
+//     }
+//   }
+// `;
 
 const IndexPage = ({ data, pathContext: { langKey } }) => {
   const {
