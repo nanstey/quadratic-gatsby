@@ -1,17 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { useStaticQuery, graphql } from "gatsby";
 import { Row, Col, Button } from "react-bootstrap";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
 
-const Contact = ({ className, frontmatter }) => {
+const Contact = ({ className }) => {
+  const { markdownRemark = {} } = useStaticQuery(graphql`
+    query ContactQuery {
+      markdownRemark(fields: { fileName: { regex: "/contact/i" } }) {
+        frontmatter {
+          anchor
+          header
+          subheader
+          telephone
+          email
+          callToAction
+          jumpToAnchor
+          jumpToAnchorText
+        }
+      }
+    }
+  `);
+
+  const frontmatter = markdownRemark.frontmatter;
   if (!frontmatter) {
     return null;
   }
 
-  const { anchor, header, subheader, callToAction, telephone, email, jumpToAnchor, jumpToAnchorText } = frontmatter;
+  const {
+    anchor,
+    header,
+    subheader,
+    callToAction,
+    telephone,
+    email,
+    jumpToAnchor,
+    jumpToAnchorText,
+  } = frontmatter;
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollToSection = useSmoothScrollTo(jumpToAnchor);
 
@@ -26,7 +54,7 @@ const Contact = ({ className, frontmatter }) => {
         </Col>
       </Row>
       <Row className="justify-content-center mb-5">
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: "center" }}>
           <Button size="xl" variant="primary" className="text-uppercase" onClick={scrollToSection}>
             {jumpToAnchorText}
           </Button>
@@ -40,8 +68,9 @@ const Contact = ({ className, frontmatter }) => {
               {telephone}
             </a>
           </Col>
-        ) : ''
-        }
+        ) : (
+          ""
+        )}
         <Col lg={4} className="m-auto text-center">
           <Icon iconName="EnvelopIcon" size="3x" className="text-muted mb-3" />
           <a className="d-block" href={`mailto:${email}`}>
@@ -55,12 +84,10 @@ const Contact = ({ className, frontmatter }) => {
 
 Contact.propTypes = {
   className: PropTypes.string,
-  frontmatter: PropTypes.object,
 };
 
 Contact.defaultProps = {
   className: null,
-  frontmatter: null,
 };
 
 export default Contact;

@@ -1,21 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const useScript = (url, callback) => {
-    useEffect(() => {
-        const script = document.createElement('script');
+  useEffect(() => {
+    const script = document.createElement("script");
 
-        script.src = url;
-        script.async = false;
-        script.onload = callback;
+    script.src = url;
+    script.async = false;
+    script.onload = callback;
+    script.defer = true;
 
-        document.body.appendChild(script);
-        console.log('attach script');
+    document.body.appendChild(script);
 
-        return () => {
-            console.log('remove script');
-            document.body.removeChild(script);
-        }
-    }, [url, callback]);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, [url, callback]);
 };
 
 export default useScript;

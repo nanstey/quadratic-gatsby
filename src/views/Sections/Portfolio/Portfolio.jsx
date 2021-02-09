@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
+import { useStaticQuery, graphql } from "gatsby";
 import { Row } from "react-bootstrap";
 import SectionHeader from "components/SectionHeader";
 import PortfolioItem from "components/PortfolioItem";
@@ -12,8 +13,30 @@ import ModalOverlay from "components/ModalOverlay";
 
 import "./Portfolio.scss";
 
-const Portfolio = ({ className, frontmatter }) => {
+const Portfolio = ({ className }) => {
   const [activeIndex, setActiveIndex] = React.useState(null);
+
+  const { markdownRemark = {} } = useStaticQuery(graphql`
+    query PortfolioQuery {
+      markdownRemark(fields: { fileName: { regex: "/portfolio/i" } }) {
+        frontmatter {
+          anchor
+          header
+          subheader
+          portfolios {
+            type
+            header
+            subheader
+            imageFileName
+            youtubeLink
+            bandcampId
+          }
+        }
+      }
+    }
+  `);
+
+  const frontmatter = markdownRemark.frontmatter;
 
   if (!frontmatter) {
     return null;
@@ -28,25 +51,25 @@ const Portfolio = ({ className, frontmatter }) => {
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
       <Row>
-        {portfolios.map(
-          (portfolioItem, index) => (
-            <PortfolioItem
-              key={portfolioItem.header}
-              item={portfolioItem}
-              setActive={() => setActiveIndex(index)}
-            />
-          ),
-        )}
+        {portfolios.map((portfolioItem, index) => (
+          <PortfolioItem
+            key={portfolioItem.header}
+            item={portfolioItem}
+            setActive={() => setActiveIndex(index)}
+          />
+        ))}
         {activeModalItem && (
           <ModalOverlay
             show={activeIndex !== null}
             onHide={() => setActiveIndex(null)}
             closeModal={() => setActiveIndex(null)}
-            setLeft={() => setActiveIndex((activeIndex - 1 + portfolios.length) % portfolios.length)}
+            setLeft={() =>
+              setActiveIndex((activeIndex - 1 + portfolios.length) % portfolios.length)
+            }
             setRight={() => setActiveIndex((activeIndex + 1) % portfolios.length)}
           >
-            {activeModalItem.type === 'youtube' && <Video url={activeModalItem.youtubeLink} />}
-            {activeModalItem.type === 'bandcamp' && <Bandcamp id={activeModalItem.bandcampId} />}
+            {activeModalItem.type === "youtube" && <Video url={activeModalItem.youtubeLink} />}
+            {activeModalItem.type === "bandcamp" && <Bandcamp id={activeModalItem.bandcampId} />}
           </ModalOverlay>
         )}
       </Row>
@@ -56,12 +79,10 @@ const Portfolio = ({ className, frontmatter }) => {
 
 Portfolio.propTypes = {
   className: PropTypes.string,
-  frontmatter: PropTypes.object,
 };
 
 Portfolio.defaultProps = {
   className: null,
-  frontmatter: null,
 };
 
 export default Portfolio;

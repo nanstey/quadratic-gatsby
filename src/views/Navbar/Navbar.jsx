@@ -1,7 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
-
 import clsx from "clsx";
+import { useStaticQuery, graphql } from "gatsby";
 
 import { Navbar, Container, Nav } from "react-bootstrap";
 
@@ -13,8 +12,37 @@ import Image from "components/Image";
 
 import "./Navbar.scss";
 
-const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
-  const { brand, menuText, navBar } = frontmatter;
+const MyNavbar = () => {
+  const {
+    allMarkdownRemark: { nodes },
+    markdownRemark = { frontmatter: {} },
+  } = useStaticQuery(graphql`
+    query NavBarQuery {
+      allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "//sections//" }
+          frontmatter: { anchor: { ne: null } }
+        }
+        sort: { fields: fileAbsolutePath }
+      ) {
+        nodes {
+          frontmatter {
+            anchor
+          }
+        }
+      }
+      markdownRemark(fields: { fileName: { regex: "/navbar/i" } }) {
+        frontmatter {
+          brand
+          menuText
+          navBar {
+            imageFileName
+          }
+        }
+      }
+    }
+  `);
+  const { menuText, navBar } = markdownRemark.frontmatter;
 
   const handleScrollToTop = useSmoothScrollTo(0);
 
@@ -46,7 +74,7 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
     >
       <Container>
         <Navbar.Brand className="cursor-pointer" onClick={handleBrandClick}>
-          <div className='navbar-brand-icon'>
+          <div className="navbar-brand-icon">
             <Image fileName={navBar.imageFileName} alt="" />
           </div>
         </Navbar.Brand>
@@ -56,27 +84,14 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="text-uppercase ml-auto">
-            {anchors.map((anchor) => (
+            {nodes.map(({ frontmatter: { anchor } }) => (
               <NavItem key={anchor} to={anchor} onClick={closeMenu} />
             ))}
           </Nav>
-          {extraItems}
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-};
-
-MyNavbar.propTypes = {
-  anchors: PropTypes.arrayOf(PropTypes.string),
-  frontmatter: PropTypes.object,
-  extraItems: PropTypes.any,
-};
-
-MyNavbar.defaultProps = {
-  anchors: [],
-  frontmatter: {},
-  extraItems: null,
 };
 
 export default MyNavbar;

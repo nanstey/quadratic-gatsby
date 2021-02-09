@@ -1,13 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { useStaticQuery, graphql } from "gatsby";
 import { Row, Col } from "react-bootstrap";
 import TeamMember from "components/TeamMember";
 import SectionHeader from "components/SectionHeader";
 import PageSection from "components/PageSection";
 import "./Team.scss";
 
-const Team = ({ className, frontmatter }) => {
+const Team = ({ className }) => {
+  const { markdownRemark = {} } = useStaticQuery(graphql`
+    query TeamQuery {
+      markdownRemark(fields: { fileName: { regex: "/team/i" } }) {
+        frontmatter {
+          anchor
+          header
+          subheader
+          content
+          teamMember {
+            header
+            subheader
+            key
+            imageFileName
+            social {
+              facebook
+              instagram
+              linkedin
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const frontmatter = markdownRemark.frontmatter;
   if (!frontmatter) {
     return null;
   }
@@ -43,12 +69,10 @@ const Team = ({ className, frontmatter }) => {
 
 Team.propTypes = {
   className: PropTypes.string,
-  frontmatter: PropTypes.object,
 };
 
 Team.defaultProps = {
   className: null,
-  frontmatter: null,
 };
 
 export default Team;

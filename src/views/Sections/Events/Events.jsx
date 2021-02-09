@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { useStaticQuery, graphql } from "gatsby";
 import { Row, Col, Button } from "react-bootstrap";
 
 import SectionHeader from "components/SectionHeader";
@@ -10,7 +11,26 @@ import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 
 import "./Event.scss";
 
-const Events = ({ className, frontmatter }) => {
+const Events = ({ className }) => {
+  const { markdownRemark = {} } = useStaticQuery(graphql`
+    query EventsQuery {
+      markdownRemark(fields: { fileName: { regex: "/events/i" } }) {
+        frontmatter {
+          events {
+            contents
+            date
+            expiryDate
+            header
+            imageFileName
+            jumpToAnchor
+            jumpToAnchorText
+          }
+        }
+      }
+    }
+  `);
+
+  const frontmatter = markdownRemark.frontmatter;
   if (!frontmatter) {
     return null;
   }
@@ -64,12 +84,10 @@ const Events = ({ className, frontmatter }) => {
 
 Events.propTypes = {
   className: PropTypes.string,
-  frontmatter: PropTypes.object,
 };
 
 Events.defaultProps = {
   className: null,
-  frontmatter: null,
 };
 
 export default Events;

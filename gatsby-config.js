@@ -1,5 +1,5 @@
 const path = require("path");
-const { title, keywords, description, author, defaultLang, trackingId } = require("./config/site");
+const { title, keywords, description, author, trackingId } = require("./config/site");
 
 module.exports = {
   siteMetadata: {
@@ -57,20 +57,12 @@ module.exports = {
       resolve: "gatsby-plugin-google-fonts",
       options: {
         fonts: [
-          "Montserrat\:400,700",
-          "Almarai\:300,400,700,800",
+          "Montserrat:400,700",
+          "Almarai:300,400,700,800",
           "Kaushan+Script",
-          "Droid+Serif\:400,400i,700,700i",
-          "Roboto+Slab\:400,100,300,700",
+          "Droid+Serif:400,400i,700,700i",
+          "Roboto+Slab:400,100,300,700",
         ],
-      },
-    },
-    {
-      resolve: "gatsby-plugin-i18n",
-      options: {
-        langKeyDefault: defaultLang,
-        useLangKeyLayout: false,
-        pagesPaths: ["/content/"],
       },
     },
   ],
