@@ -14,5 +14,5 @@ module.exports = {
   ],
   description: "Studio Rentals & Multimedia Services",
   author: "nanstey",
-  trackingId: "UA-119418003-5",
+  trackingId: "GTM-W7BSV7W",
 };
