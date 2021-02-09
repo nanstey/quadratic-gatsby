@@ -6,18 +6,9 @@ import { Col } from "react-bootstrap";
 import Image from "components/Image";
 import Icon from "components/Icon";
 
-
 import "./PortfolioItem.scss";
 
-const PortfolioItem = ({
-  item: {
-    imageFileName,
-    imageAlt,
-    header,
-    subheader,
-  },
-  setActive
-}) => {
+const PortfolioItem = ({ item: { imageFileName, header, subheader }, setActive }) => {
   return (
     <>
       <Col lg={4} md={6} className="portfolio-item">
@@ -28,11 +19,7 @@ const PortfolioItem = ({
           data-toggle="modal"
           onClick={setActive}
         >
-          <Image
-            className="img-fluid"
-            fileName={imageFileName}
-            alt={imageAlt || header || subheader}
-          />
+          <Image className="img-fluid" fileName={imageFileName} alt={header || subheader} />
           <div className="portfolio-hover">
             <div className="portfolio-hover-content">
               <Icon iconName="PlayIcon" size="2x" />
@@ -51,7 +38,6 @@ const PortfolioItem = ({
 PortfolioItem.propTypes = {
   item: PropTypes.shape({
     imageFileName: PropTypes.string.isRequired,
-    imageAlt: PropTypes.string.isRequired,
     header: PropTypes.string.isRequired,
     subheader: PropTypes.string.isRequired,
   }).isRequired,

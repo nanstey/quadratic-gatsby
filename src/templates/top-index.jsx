@@ -44,14 +44,14 @@ import "../style/main.scss";
 //           navBar {
 //             imageFileName
 //           }
-//           portfolios {
-//             type
-//             header
-//             subheader
-//             imageFileName
-//             youtubeLink
-//             bandcampId
-//           }
+// portfolios {
+//   type
+//   header
+//   subheader
+//   imageFileName
+//   youtubeLink
+//   bandcampId
+// }
 //           privacyHref
 //           privacyText
 //           services {
@@ -80,20 +80,20 @@ import "../style/main.scss";
 //           }
 //           subheader
 //           callToAction
-//           teamMember {
-//             header
-//             key
-//             imageFileName
-//             social {
-//               facebook
-//               instagram
-//               github
-//               linkedin
-//               medium
-//               twitter
-//             }
-//             subheader
-//           }
+// teamMember {
+//   header
+//   key
+//   imageFileName
+//   social {
+//     facebook
+//     instagram
+//     github
+//     linkedin
+//     medium
+//     twitter
+//   }
+//   subheader
+// }
 //           telephone
 //           title
 //           timeline {

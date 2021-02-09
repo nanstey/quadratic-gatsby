@@ -34,6 +34,8 @@ const IndexPage = ({ data }) => {
     allMarkdownRemark: { nodes },
   } = data;
 
+  console.log(nodes);
+
   return (
     <>
       <SEO
