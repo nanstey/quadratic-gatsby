@@ -34,24 +34,9 @@ const IndexPage = ({ data }) => {
     allMarkdownRemark: { nodes },
   } = data;
 
-  console.log(nodes);
-
   return (
     <>
-      <SEO
-        title="Main"
-        keywords={[
-          "gatsby",
-          "gatsbyjs",
-          "landing page",
-          "landing",
-          "i18n",
-          "eslint",
-          "bootstrap",
-          "startbootstrap-agency",
-        ]}
-        description="gatsby version of startbootstrap-agency with i18n support"
-      />
+      <SEO />
       <Navbar />
       <Top />
       {

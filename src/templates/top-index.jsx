@@ -19,12 +19,12 @@ import "../style/main.scss";
  */
 // export const query = graphql`
 //   query IndexQuery($langKey: String!) {
-//     site {
-//       siteMetadata {
-//         keywords
-//         description
-//       }
-//     }
+// site {
+//   siteMetadata {
+//     keywords
+//     description
+//   }
+// }
 //     allMarkdownRemark(
 //       filter: { fields: { langKey: { eq: $langKey } } }
 //       sort: { order: ASC, fields: [fields___directoryName, fields___fileName] }
