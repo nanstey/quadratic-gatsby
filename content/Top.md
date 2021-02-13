@@ -1,6 +1,6 @@
 ---
 header: "Quadratic Sound"
-subheader: "Welcome To The Studio!"
+subheader: "Learn. Create. Thrive."
 imageFileName: "header-studio.jpg"
 jumpToAnchor: "Book"
 jumpToAnchorText: "Book Now"

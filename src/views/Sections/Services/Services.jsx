@@ -20,6 +20,7 @@ const Services = ({ className }) => {
             content
             header
             iconName
+            link
           }
         }
       }

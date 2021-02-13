@@ -1,10 +1,25 @@
-.circle-fa-button {
-  width: 128px;
-  height: 128px;
-  background: $primary;
-  border-radius: 100%;
-  display: flex;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
+.circle-fa-button-container {
+  min-height: 144px;
+
+  .circle-fa-button {
+    width: 128px;
+    height: 128px;
+    color: white;
+    background-color: $primary;
+    border-radius: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    top: 7px;
+    transition: width 0.55s, height 0.55s, top 0.55s, background-color 0.55s;
+
+    &:hover {
+      background-color: $secondary;
+      width: 142px;
+      height: 142px;
+      top: 0px;
+    }
+  }
 }

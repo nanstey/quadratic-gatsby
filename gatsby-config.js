@@ -7,6 +7,32 @@ module.exports = {
     keywords,
     description,
     author,
+    menuLinks: [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "Studio",
+        link: "/studio",
+      },
+      {
+        name: "Education",
+        link: "/education",
+      },
+      {
+        name: "Services",
+        link: "/services",
+      },
+      {
+        name: "About",
+        link: "/about",
+      },
+      {
+        name: "Contact",
+        link: "/contact",
+      },
+    ],
   },
   plugins: [
     {

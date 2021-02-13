@@ -2,23 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Nav } from "react-bootstrap";
-import { Link } from "react-scroll";
 
 import "./NavItem.scss";
 
 const NavItem = ({ to, onClick, children }) => {
   return (
     <Nav.Item>
-      <Link
-        className="nav-link cursor-pointer"
-        activeClass="active"
-        to={to}
-        spy
-        smooth="easeInOutQuart"
-        onClick={onClick}
-      >
+      <Nav.Link className="nav-link cursor-pointer" href={to} onClick={onClick}>
         {children || to}
-      </Link>
+      </Nav.Link>
     </Nav.Item>
   );
 };

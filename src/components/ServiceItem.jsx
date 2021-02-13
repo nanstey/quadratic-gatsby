@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Nav } from "react-bootstrap";
+
 import CircleFAButton from "components/CircleFAButton";
 import Image from "components/Image";
 import "./ServiceItem.scss";
 
-const ServiceItem = ({ iconName, imageFileName, header, content }) => {
+const ServiceItem = ({ iconName, imageFileName, header, content, link }) => {
   let iconPart;
   if (iconName) {
     iconPart = <CircleFAButton iconName={iconName} />;
@@ -13,15 +15,16 @@ const ServiceItem = ({ iconName, imageFileName, header, content }) => {
 
   let imagePart;
   if (imageFileName) {
-    imagePart = <Image className="service-item-image" fileName={imageFileName} />;
+    imagePart = <Image className="service-item-image" fileName={imageFileName} href={link} />;
   }
 
   return (
     <>
-      {iconPart}
-      {imagePart}
+      <a href={link}>{iconPart}</a>
+      <a href={link}>{imagePart}</a>
       <h4 className="service-item-heading">{header}</h4>
       <p className="text-muted">{content}</p>
+      <a href={link}>Learn More</a>
     </>
   );
 };
@@ -31,6 +34,7 @@ ServiceItem.propTypes = {
   imageFileName: PropTypes.string,
   header: PropTypes.string,
   content: PropTypes.string,
+  link: PropTypes.string,
 };
 
 ServiceItem.defaultProps = {
@@ -38,6 +42,7 @@ ServiceItem.defaultProps = {
   imageFileName: null,
   header: "",
   content: "",
+  link: "",
 };
 
 export default ServiceItem;
