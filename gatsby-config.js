@@ -1,6 +1,10 @@
 const path = require("path");
 const { title, keywords, description, author, trackingId } = require("./config/site");
 
+require("dotenv").config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
     title,
