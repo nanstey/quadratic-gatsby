@@ -10,14 +10,28 @@ import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
 import useScript from "hooks/useScript";
 
-const Book = ({ className }) => {
+const categoryMap = {
+  all: false,
+  studio: 1,
+  services: 2,
+  education: 37,
+};
+
+const Book = ({ className, category }) => {
+  const config = {
+    host: "quadraticsound.checkfront.com",
+    target: "CHECKFRONT_WIDGET",
+    options: "tabs",
+    provider: "droplet",
+  };
+
+  const categoryId = categoryMap[category];
+  if (categoryId) {
+    config.category_id = categoryId;
+  }
+
   useScript("//quadraticsound.checkfront.com/lib/interface--0.js", () => {
-    new DROPLET.Widget({
-      host: "quadraticsound.checkfront.com",
-      target: "CHECKFRONT_WIDGET",
-      options: "tabs",
-      provider: "droplet",
-    }).render();
+    new DROPLET.Widget(config).render();
   });
 
   const { markdownRemark = {} } = useStaticQuery(graphql`
@@ -67,10 +81,12 @@ const Book = ({ className }) => {
 
 Book.propTypes = {
   className: PropTypes.string,
+  category: PropTypes.oneOf(["all", "studio", "services", "education"]),
 };
 
 Book.defaultProps = {
   className: null,
+  category: "all",
 };
 
 export default Book;
