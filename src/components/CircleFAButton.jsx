@@ -9,7 +9,7 @@ const CircleFAButton = ({ iconName, ...restProps }) => {
   return (
     <div className="circle-fa-button-container">
       <div className="circle-fa-button">
-        <Icon iconName={iconName} inverse size="4x" {...restProps} />
+        <Icon className="circle-fa-button-icon" iconName={iconName} inverse {...restProps} />
       </div>
     </div>
   );
