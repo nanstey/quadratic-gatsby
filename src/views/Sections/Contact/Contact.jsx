@@ -62,7 +62,7 @@ const Contact = ({ className }) => {
       </Row>
       <Row>
         {telephone ? (
-          <Col lg={4} className="m-auto text-center">
+          <Col md={4} className="ml-auto mr-auto mb-3 text-center">
             <Icon iconName="PhoneIcon" size="3x" className="text-muted mb-3" />
             <a className="d-block" href={`tel:${telephone}`}>
               {telephone}
@@ -71,7 +71,7 @@ const Contact = ({ className }) => {
         ) : (
           ""
         )}
-        <Col lg={4} className="m-auto text-center">
+        <Col md={4} className="m-auto text-center">
           <Icon iconName="EnvelopIcon" size="3x" className="text-muted mb-3" />
           <a className="d-block" href={`mailto:${email}`}>
             {email}
