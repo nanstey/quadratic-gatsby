@@ -1,20 +1,15 @@
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types";
-import ReactPlayer from "react-player"
+import ReactPlayer from "react-player";
 
 import "./Video.scss";
 
 function Video({ url }) {
   return (
     <div className="video-player">
-      <ReactPlayer
-        playing={true}
-        controls={true}
-        width="auto"
-        url={url}
-      />
+      <ReactPlayer playing={true} controls={true} width="auto" url={url} />
     </div>
-  )
+  );
 }
 
 Video.propTypes = {
@@ -25,4 +20,4 @@ Video.defaultProps = {
   url: null,
 };
 
-export default Video
+export default Video;
