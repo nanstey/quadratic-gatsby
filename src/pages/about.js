@@ -1,7 +1,7 @@
 import React from "react";
 
-import HeroCarousel from "components/HeroCarousel";
 import Page from "components/Page";
+import Top from "views/Top";
 import Team from "views/Sections/Team";
 import About from "views/Sections/About";
 import Contact from "views/Sections/Contact";
@@ -12,7 +12,7 @@ const IndexPage = () => {
   return (
     <>
       <Page>
-        <HeroCarousel />
+        <Top />
         <Team className="bg-light" />
         <About />
         <Contact className="bg-light" />
