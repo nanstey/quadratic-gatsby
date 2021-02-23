@@ -34,7 +34,7 @@ const IndexPage = () => {
         <HeroCarousel slides={slides} />
         <Team className="bg-light" />
         <About />
-        <Contact className="bg-light" />
+        <Contact className="bg-light" showBookButton={false} />
       </Page>
     </>
   );
