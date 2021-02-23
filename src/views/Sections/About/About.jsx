@@ -11,24 +11,26 @@ import nl2br from "utils/nl2br";
 import "./About.scss";
 
 const About = ({ className }) => {
-  const { markdownRemark = {} } = useStaticQuery(graphql`
-    query AboutQuery {
-      markdownRemark(fields: { fileName: { regex: "/about/i" } }) {
-        frontmatter {
-          anchor
-          header
-          subheader
-          timeline {
-            imageContent
-            imageFileName
+  const { markdownRemark = {} } = useStaticQuery(
+    graphql`
+      query AboutQuery {
+        markdownRemark(fileAbsolutePath: { regex: "/sections/4.About/i" }) {
+          frontmatter {
+            anchor
             header
             subheader
-            content
+            timeline {
+              imageContent
+              imageFileName
+              header
+              subheader
+              content
+            }
           }
         }
       }
-    }
-  `);
+    `,
+  );
 
   const frontmatter = markdownRemark.frontmatter;
   if (!frontmatter) {

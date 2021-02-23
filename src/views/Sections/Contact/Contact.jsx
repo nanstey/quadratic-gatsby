@@ -10,7 +10,7 @@ import PageSection from "components/PageSection";
 const Contact = ({ className, showBookButton }) => {
   const { markdownRemark = {} } = useStaticQuery(graphql`
     query ContactQuery {
-      markdownRemark(fields: { fileName: { regex: "/contact/i" } }) {
+      markdownRemark(fileAbsolutePath: { regex: "/sections/6.Contact/i" }) {
         frontmatter {
           anchor
           header
