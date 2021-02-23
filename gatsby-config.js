@@ -1,12 +1,42 @@
 const path = require("path");
 const { title, keywords, description, author, trackingId } = require("./config/site");
 
+require("dotenv").config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
     title,
     keywords,
     description,
     author,
+    menuLinks: [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "Studio",
+        link: "/studio",
+      },
+      {
+        name: "Education",
+        link: "/education",
+      },
+      {
+        name: "Services",
+        link: "/services",
+      },
+      {
+        name: "About",
+        link: "/about",
+      },
+      {
+        name: "Contact",
+        link: "/contact",
+      },
+    ],
   },
   plugins: [
     {

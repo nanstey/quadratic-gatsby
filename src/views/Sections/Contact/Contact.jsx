@@ -7,10 +7,10 @@ import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
 
-const Contact = ({ className }) => {
+const Contact = ({ className, showBookButton }) => {
   const { markdownRemark = {} } = useStaticQuery(graphql`
     query ContactQuery {
-      markdownRemark(fields: { fileName: { regex: "/contact/i" } }) {
+      markdownRemark(fileAbsolutePath: { regex: "/sections/6.Contact/i" }) {
         frontmatter {
           anchor
           header
@@ -53,16 +53,24 @@ const Contact = ({ className }) => {
           <p className="text-muted mb-5">{callToAction}</p>
         </Col>
       </Row>
-      <Row className="justify-content-center mb-5">
-        <div style={{ textAlign: "center" }}>
-          <Button size="xl" variant="primary" className="text-uppercase" onClick={scrollToSection}>
-            {jumpToAnchorText}
-          </Button>
-        </div>
-      </Row>
+      {showBookButton && (
+        <Row className="justify-content-center mb-5">
+          <div style={{ textAlign: "center" }}>
+            <Button
+              size="xl"
+              variant="primary"
+              className="text-uppercase"
+              onClick={scrollToSection}
+            >
+              {jumpToAnchorText}
+            </Button>
+          </div>
+        </Row>
+      )}
+
       <Row>
         {telephone ? (
-          <Col lg={4} className="m-auto text-center">
+          <Col md={4} className="ml-auto mr-auto mb-3 text-center">
             <Icon iconName="PhoneIcon" size="3x" className="text-muted mb-3" />
             <a className="d-block" href={`tel:${telephone}`}>
               {telephone}
@@ -71,7 +79,7 @@ const Contact = ({ className }) => {
         ) : (
           ""
         )}
-        <Col lg={4} className="m-auto text-center">
+        <Col md={4} className="m-auto text-center">
           <Icon iconName="EnvelopIcon" size="3x" className="text-muted mb-3" />
           <a className="d-block" href={`mailto:${email}`}>
             {email}
@@ -84,10 +92,12 @@ const Contact = ({ className }) => {
 
 Contact.propTypes = {
   className: PropTypes.string,
+  showBookButton: PropTypes.bool,
 };
 
 Contact.defaultProps = {
   className: null,
+  showBookButton: true,
 };
 
 export default Contact;

@@ -14,20 +14,17 @@ import "./Navbar.scss";
 
 const MyNavbar = () => {
   const {
-    allMarkdownRemark: { nodes },
+    site: {
+      siteMetadata: { menuLinks },
+    },
     markdownRemark = { frontmatter: {} },
   } = useStaticQuery(graphql`
     query NavBarQuery {
-      allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "//sections//" }
-          frontmatter: { anchor: { ne: null } }
-        }
-        sort: { fields: fileAbsolutePath }
-      ) {
-        nodes {
-          frontmatter {
-            anchor
+      site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
           }
         }
       }
@@ -84,8 +81,10 @@ const MyNavbar = () => {
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="text-uppercase ml-auto">
-            {nodes.map(({ frontmatter: { anchor } }) => (
-              <NavItem key={anchor} to={anchor} onClick={closeMenu} />
+            {menuLinks.map(({ name, link }) => (
+              <NavItem key={name} to={link} onClick={closeMenu}>
+                {name}
+              </NavItem>
             ))}
           </Nav>
         </Navbar.Collapse>

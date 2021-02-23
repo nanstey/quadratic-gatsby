@@ -9,7 +9,11 @@ import "./ImageCard.scss";
 const ImageCard = ({ className, imageFileName, imageAlt, header, subheader, extraInfo }) => {
   return (
     <Card className={clsx("image-card bg-dark text-white text-center", className)}>
-      <Image className="image blur" fileName={imageFileName} alt={imageAlt || header || subheader} />
+      <Image
+        className="image blur"
+        fileName={imageFileName}
+        alt={imageAlt || header || subheader}
+      />
       <Card.ImgOverlay className="no-padding">
         <Container>
           <div className="intro-text">
@@ -35,7 +39,7 @@ ImageCard.propTypes = {
 ImageCard.defaultProps = {
   className: null,
   imageFileName: null,
-  imageAlt: '',
+  imageAlt: "",
   header: "",
   subheader: "",
   extraInfo: null,

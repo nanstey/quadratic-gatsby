@@ -6,7 +6,7 @@ import {
   faPlay,
   faBars,
   faTimes,
-  faGlobe,
+  faMapMarkerAlt,
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
@@ -29,7 +29,7 @@ export const MediumIcon = makeFAIcon(faMediumM);
 export const CloseIcon = makeFAIcon(faTimes);
 export const ChevronLeft = makeFAIcon(faChevronLeft);
 export const ChevronRight = makeFAIcon(faChevronRight);
-export const LanguageIcon = makeFAIcon(faGlobe);
+export const MapMarkerIcon = makeFAIcon(faMapMarkerAlt);
 
 export const TwitterIcon = makeFAIcon(faTwitter);
 export const FacebookIcon = makeFAIcon(faFacebookF);

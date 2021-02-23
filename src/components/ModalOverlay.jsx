@@ -6,14 +6,7 @@ import Icon from "components/Icon";
 
 import "./ModalOverlay.scss";
 
-const ModalOverlay = ({
-  show,
-  onHide,
-  closeModal,
-  setLeft,
-  setRight,
-  children
-}) => {
+const ModalOverlay = ({ show, onHide, closeModal, setLeft, setRight, children }) => {
   return (
     <Modal
       show={show}
@@ -23,13 +16,13 @@ const ModalOverlay = ({
       className="modal-overlay"
       centered
     >
-      <div className='close-icon'>
+      <div className="close-icon">
         <Icon onClick={closeModal} iconName="CloseIcon" size="3x" />
       </div>
-      <div className='chevron chevron-left'>
+      <div className="chevron chevron-left">
         <Icon onClick={setLeft} iconName="ChevronLeft" size="3x" />
       </div>
-      <div className='chevron chevron-right'>
+      <div className="chevron chevron-right">
         <Icon onClick={setRight} iconName="ChevronRight" size="3x" />
       </div>
       {children}
@@ -52,7 +45,7 @@ ModalOverlay.defaultProps = {
   closeModal: null,
   setLeft: null,
   setRight: null,
-  children: null
+  children: null,
 };
 
 export default ModalOverlay;
