@@ -2,6 +2,7 @@ import React from "react";
 
 import Page from "components/Page";
 import Top from "views/Top";
+import Events from "views/Sections/Events";
 import Services from "views/Sections/Services";
 import Book from "views/Sections/Book";
 import Contact from "views/Sections/Contact";
@@ -13,6 +14,7 @@ const IndexPage = () => {
     <>
       <Page>
         <Top />
+        <Events />
         <Services className="bg-light" />
         <Book />
         <Contact className="bg-light" />
