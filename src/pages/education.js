@@ -3,6 +3,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Page from "components/Page";
 import HeroCarousel from "components/HeroCarousel";
+import Education from "views/Sections/Education";
 import Book from "views/Sections/Book";
 import Contact from "views/Sections/Contact";
 import "utils/fixFontAwesome";
@@ -31,6 +32,7 @@ const IndexPage = () => {
     <>
       <Page>
         <HeroCarousel slides={slides} />
+        <Education className="bg-light" />
         <Book category="education" />
         <Contact className="bg-light" />
       </Page>
