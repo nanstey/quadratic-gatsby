@@ -66,7 +66,7 @@ const Education = ({ className }) => {
           anchor
           header
           subheader
-          paragraph
+          contents
           programs {
             header
             contents
@@ -84,7 +84,7 @@ const Education = ({ className }) => {
     return null;
   }
 
-  const { anchor, header: rootHeader, subheader: rootSubHeader, paragraph, programs } = frontmatter;
+  const { anchor, header: rootHeader, subheader: rootSubHeader, contents, programs } = frontmatter;
   console.log(frontmatter);
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -94,7 +94,11 @@ const Education = ({ className }) => {
     <PageSection className={className} id={anchor}>
       <Row className="mb-5">
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
-        <p>{paragraph}</p>
+        <div className="education-page-paragraph-contents">
+          {contents.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </div>
       </Row>
       {programs.map((program, index) => (
         <Row className="text-center education" key={program.header}>

@@ -2,8 +2,11 @@
 anchor: "Education"
 header: "Education Programs"
 subheader: "Learn. Create. Thrive."
-paragraph: "Our STEM programs help prepare kids for a variety of educational and career paths. We offer a variety of programs that emphasize hands-on activities for learning to help kids explore subjects and questions in new and unique ways. At the studio we are focused on providing an environment that will nurture and support all types of learners thanks to our dedicated and experienced instructors. The world today continues to become more and more technological dependent and we are here to help build and strengthen your young learner’s knowledge in this area. Help your kid prepare for the future!
-"
+contents: [
+  "Our STEM programs help prepare kids for a variety of educational and career paths. We offer a variety of programs that emphasize hands-on activities for learning to help kids explore subjects and questions in new and unique ways.", 
+  "At the studio we are focused on providing an environment that will nurture and support all types of learners thanks to our dedicated and experienced instructors.",
+  "The world today continues to become more and more technological dependent and we are here to help build and strengthen your young learner’s knowledge in this area. Help your kid prepare for the future!"
+]
 programs: [
   {
     header: "Lego Robotics",
@@ -16,7 +19,8 @@ programs: [
   {
     header: "2D Video Game Design",
     contents: [
-      "Kids will step into the role of a game developer and will create a complete game. This activity will help kids develop their creativity and turn their imaginations into reality. They will do everything from planning a storyboard for their game, designing their own characters, creating unique environments to programming a showdown with the final boss! They will have the opportunity to take the game home when it is complete!"],
+      "Kids will step into the role of a game developer and will create a complete game. This activity will help kids develop their creativity and turn their imaginations into reality.", 
+      "They will do everything from planning a storyboard for their game, designing their own characters, creating unique environments to programming a showdown with the final boss! They will have the opportunity to take the game home when it is complete!"],
     imageFileName: 'sections/education/game-design-camp.jpg',
     jumpToAnchor: "Book",
     jumpToAnchorText: "Book Now",
@@ -32,7 +36,7 @@ programs: [
   {
     header: "Stop Motion Studio Moviemaking",
     contents: [
-      "Step into the role of the moviemaker. Kids will get a chance to storyboard their ideas, create unique characters, and then film. Afterwards, they will edit their production using editing software and put the finishing touches on their film including sound, music, voice-over, and green screening.  They will have the opportunity to take their movie home when it is complete!"],
+      "Step into the role of the moviemaker. Kids will get a chance to storyboard their ideas, create unique characters, and then film. Afterwards, they will edit their production using editing software and put the finishing touches on their film including sound, music, voice-over, and green screening. They will have the opportunity to take their movie home when it is complete!"],
     imageFileName: 'sections/education/stop-motion-camp.jpg',
     jumpToAnchor: "Book",
     jumpToAnchorText: "Book Now",
