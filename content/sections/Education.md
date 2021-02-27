@@ -15,6 +15,8 @@ programs: [
     imageFileName: 'sections/education/lego-camp.jpg',
     jumpToAnchor: "Book",
     jumpToAnchorText: "Book Now",
+    iconName: "RobotIcon",
+    texture: "bricks"
   },
   {
     header: "2D Video Game Design",
@@ -24,6 +26,8 @@ programs: [
     imageFileName: 'sections/education/game-design-camp.jpg',
     jumpToAnchor: "Book",
     jumpToAnchorText: "Book Now",
+    iconName: "GamepadIcon",
+    texture: "graph"
   },
   {
     header: "Minecraft Modding",
@@ -32,6 +36,8 @@ programs: [
     imageFileName: 'sections/education/minecraft-camp.jpg',
     jumpToAnchor: "Book",
     jumpToAnchorText: "Book Now",
+    iconName: "CubesIcon",
+    texture: "blocks"
   },
   {
     header: "Stop Motion Studio Moviemaking",
@@ -40,6 +46,8 @@ programs: [
     imageFileName: 'sections/education/stop-motion-camp.jpg',
     jumpToAnchor: "Book",
     jumpToAnchorText: "Book Now",
+    iconName: "FilmIcon",
+    texture: "dots"
   },
 ]
 ---

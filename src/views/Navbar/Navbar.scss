@@ -1,6 +1,10 @@
 // Styling for the navbar
 .navbar-root {
   background-color: $secondary;
+
+  .container {
+    max-width: 1325px;
+  }
   .navbar-toggler {
     font-size: 12px;
     right: 0;
