@@ -5,8 +5,52 @@
 
 .education {
   margin-bottom: 40px;
+  padding: 20px;
   .education-image {
     max-width: 600px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto;
+    position: relative;
+    &.left {
+      left: -22px;
+    }
+    &.right {
+      right: -22px;
+    }
+  }
+  .education-description {
+    max-width: 600px;
+  }
+}
+
+.bricks {
+  background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png");
+}
+
+.graph {
+  background-image: url("https://www.transparenttextures.com/patterns/graphy.png");
+}
+
+.blocks {
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+
+.dots {
+  background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");
+}
+
+@media (max-width: 992px) {
+  .education {
+    margin-bottom: 0;
+    padding: 40px 0;
+    .education-image {
+      &.left,
+      &.right {
+        right: 0;
+        left: 0;
+      }
+    }
+    .education-description {
+      margin-top: 20px;
+    }
   }
 }

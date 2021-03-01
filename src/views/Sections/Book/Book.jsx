@@ -10,6 +10,8 @@ import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
 import useScript from "hooks/useScript";
 
+import "./Book.scss";
+
 const categoryMap = {
   all: false,
   studio: 1,
@@ -59,16 +61,17 @@ const Book = ({ className, category }) => {
         <SectionHeader header={header} subheader="" />
       </Row>
       <div id="CHECKFRONT_WIDGET">
-        <p
-          id="CHECKFRONT_LOADER"
-          style={{
-            background:
-              "url('//quadraticsound.checkfront.com/images/loader.gif') left center no-repeat",
-            padding: "5px 5px 5px 20px",
-          }}
-        >
-          Searching Availability...
-        </p>
+        <div id="CHECKFRONT_LOADER">
+          <div
+            id="CHECKFRONT_AVAILABILITY"
+            style={{
+              background:
+                "url('//quadraticsound.checkfront.com/images/loader.gif') left center no-repeat",
+            }}
+          >
+            Searching Availability...
+          </div>
+        </div>
       </div>
       <noscript>
         <a href="https://quadraticsound.checkfront.com/reserve/" style={{ fontSize: "16" }}>
