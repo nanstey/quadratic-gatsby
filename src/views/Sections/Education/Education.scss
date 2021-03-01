@@ -39,14 +39,18 @@
 }
 
 @media (max-width: 992px) {
-  .education-image {
-    &.left,
-    &.right {
-      right: 0;
-      left: 0;
+  .education {
+    margin-bottom: 0;
+    padding: 40px 0;
+    .education-image {
+      &.left,
+      &.right {
+        right: 0;
+        left: 0;
+      }
     }
-  }
-  .education-description {
-    margin-top: 20px;
+    .education-description {
+      margin-top: 20px;
+    }
   }
 }

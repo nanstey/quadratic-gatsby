@@ -12,7 +12,7 @@ import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 
 import "./Education.scss";
 
-const ProgramImage = ({ className, float, imageFileName, scrollToSection }) => {
+const ProgramImage = ({ float, imageFileName, scrollToSection }) => {
   return (
     <Col lg={6} className={float === "right" ? "order-lg-12" : ""}>
       <div className={`education-image ${float}`}>
@@ -25,14 +25,12 @@ const ProgramImage = ({ className, float, imageFileName, scrollToSection }) => {
 };
 
 ProgramImage.propTypes = {
-  className: PropTypes.string,
   float: PropTypes.string,
   imageFileName: PropTypes.string.isRequired,
   scrollToSection: PropTypes.func.isRequired,
 };
 
 ProgramImage.defaultProps = {
-  className: "",
   float: "left",
 };
 
@@ -91,20 +89,21 @@ const Education = ({ className }) => {
   }
 
   const { anchor, header: rootHeader, subheader: rootSubHeader, contents, programs } = frontmatter;
-  console.log(frontmatter);
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollToSection = useSmoothScrollTo("Book");
 
   return programs.length ? (
     <PageSection className={className} id={anchor}>
-      <Row className="mb-5">
+      <Row className="mb-4 justify-content-center">
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
-        <div className="education-page-paragraph-contents">
-          {contents.map((p) => (
-            <p key={p}>{p}</p>
-          ))}
-        </div>
+        <Col md={8}>
+          <div className="education-page-paragraph-contents">
+            {contents.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+        </Col>
       </Row>
       {programs.map((program, index) => (
         <Row className={`text-center education ${program.texture}`} key={program.header}>
