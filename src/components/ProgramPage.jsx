@@ -34,6 +34,7 @@ ProgramImage.defaultProps = {
 };
 
 const ProgramDescription = ({ header, contents, iconName, jumpToAnchorText, scrollToSection }) => {
+  const IconComponent = iconName ? <Icon iconName={iconName} /> : null;
   return (
     <Col lg={6} className="center-align">
       <div className="program-description">
@@ -43,7 +44,7 @@ const ProgramDescription = ({ header, contents, iconName, jumpToAnchorText, scro
         ))}
         {jumpToAnchorText && (
           <Button size="xl" variant="primary" className="text-uppercase" onClick={scrollToSection}>
-            <Icon iconName={iconName} /> {jumpToAnchorText} <Icon iconName={iconName} />
+            {IconComponent} {jumpToAnchorText} {IconComponent}
           </Button>
         )}
       </div>

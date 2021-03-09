@@ -2,12 +2,12 @@ import React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
 import Page from "components/Page";
+import ProgramPage from "components/ProgramPage";
 import HeroCarousel from "components/HeroCarousel";
 import Book from "views/Sections/Book";
 import Contact from "views/Sections/Contact";
 import "utils/fixFontAwesome";
 import "../style/main.scss";
-import ProgramPage from "components/ProgramPage";
 
 const IndexPage = () => {
   const { markdownRemark = {} } = useStaticQuery(
