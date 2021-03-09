@@ -1,12 +1,12 @@
 // Styling for the event section
-.education-page-paragraph-contents {
+.program-page-paragraph-contents {
   padding: 0 15px;
 }
 
-.education {
+.program {
   margin-bottom: 40px;
   padding: 20px;
-  .education-image {
+  .program-image {
     max-width: 600px;
     margin: 0 auto;
     position: relative;
@@ -17,7 +17,7 @@
       right: -22px;
     }
   }
-  .education-description {
+  .program-description {
     max-width: 600px;
   }
 }
@@ -39,17 +39,17 @@
 }
 
 @media (max-width: 992px) {
-  .education {
+  .program {
     margin-bottom: 0;
     padding: 40px 0;
-    .education-image {
+    .program-image {
       &.left,
       &.right {
         right: 0;
         left: 0;
       }
     }
-    .education-description {
+    .program-description {
       margin-top: 20px;
     }
   }

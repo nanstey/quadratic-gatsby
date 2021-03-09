@@ -1,21 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useStaticQuery, graphql } from "gatsby";
+import useSmoothScrollTo from "hooks/useSmoothScrollTo";
 import { Row, Col, Button } from "react-bootstrap";
 
-import Icon from "components/Icon";
-import SectionHeader from "components/SectionHeader";
-import PageSection from "components/PageSection";
-import Image from "components/Image";
-import useSmoothScrollTo from "hooks/useSmoothScrollTo";
+import Icon from "./Icon";
+import SectionHeader from "./SectionHeader";
+import PageSection from "./PageSection";
+import Image from "./Image";
 
-import "./Education.scss";
+import "./ProgramPage.scss";
 
 const ProgramImage = ({ float, imageFileName, scrollToSection }) => {
   return (
     <Col lg={6} className={float === "right" ? "order-lg-12" : ""}>
-      <div className={`education-image ${float}`}>
+      <div className={`program-image ${float}`}>
         <a role="button" onClick={scrollToSection} tabIndex={0}>
           <Image fileName={imageFileName} alt="" onClick={scrollToSection} />
         </a>
@@ -37,7 +36,7 @@ ProgramImage.defaultProps = {
 const ProgramDescription = ({ header, contents, iconName, jumpToAnchorText, scrollToSection }) => {
   return (
     <Col lg={6} className="center-align">
-      <div className="education-description">
+      <div className="program-description">
         <h1>{header}</h1>
         {contents.map((p) => (
           <p key={p}>{p}</p>
@@ -60,35 +59,8 @@ ProgramDescription.propTypes = {
   scrollToSection: PropTypes.func.isRequired,
 };
 
-const Education = ({ className }) => {
-  const { markdownRemark = {} } = useStaticQuery(graphql`
-    query EducationQuery {
-      markdownRemark(fileAbsolutePath: { regex: "/sections/Education/i" }) {
-        frontmatter {
-          anchor
-          header
-          subheader
-          contents
-          programs {
-            header
-            contents
-            imageFileName
-            jumpToAnchor
-            jumpToAnchorText
-            iconName
-            texture
-          }
-        }
-      }
-    }
-  `);
-
-  const frontmatter = markdownRemark.frontmatter;
-  if (!frontmatter) {
-    return null;
-  }
-
-  const { anchor, header: rootHeader, subheader: rootSubHeader, contents, programs } = frontmatter;
+const ProgramPage = ({ className, pageContent }) => {
+  const { anchor, header: rootHeader, subheader: rootSubHeader, contents, programs } = pageContent;
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollToSection = useSmoothScrollTo("Book");
@@ -98,7 +70,7 @@ const Education = ({ className }) => {
       <Row className="mb-4 justify-content-center">
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
         <Col md={8}>
-          <div className="education-page-paragraph-contents">
+          <div className="program-page-paragraph-contents">
             {contents.map((p) => (
               <p key={p}>{p}</p>
             ))}
@@ -106,7 +78,7 @@ const Education = ({ className }) => {
         </Col>
       </Row>
       {programs.map((program, index) => (
-        <Row className={`text-center education ${program.texture}`} key={program.header}>
+        <Row className={`text-center program ${program.texture}`} key={program.header}>
           <ProgramImage
             float={index % 2 ? "left" : "right"}
             imageFileName={program.imageFileName}
@@ -125,12 +97,29 @@ const Education = ({ className }) => {
   ) : null;
 };
 
-Education.propTypes = {
+ProgramPage.propTypes = {
   className: PropTypes.string,
+  pageContent: PropTypes.shape({
+    anchor: PropTypes.string,
+    header: PropTypes.string,
+    subheader: PropTypes.string,
+    contents: PropTypes.arrayOf(PropTypes.string),
+    programs: PropTypes.arrayOf(
+      PropTypes.shape({
+        header: PropTypes.string,
+        contents: PropTypes.arrayOf(PropTypes.string),
+        imageFileName: PropTypes.string,
+        jumpToAnchor: PropTypes.string,
+        jumpToAnchorText: PropTypes.string,
+        iconName: PropTypes.string,
+        texture: PropTypes.string,
+      }),
+    ),
+  }).isRequired,
 };
 
-Education.defaultProps = {
+ProgramPage.defaultProps = {
   className: null,
 };
 
-export default Education;
+export default ProgramPage;
