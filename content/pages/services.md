@@ -1,6 +1,8 @@
 ---
 slides: [
-    { imageFileName: "pages/studio/live-room.jpg", header: "Live Room", subheader: "Practice makes perfect" },
+    { imageFileName: "pages/services/production-mic.jpg", header: "Amplify Your Sound", subheader: "Audio Recording, Mixing, & Mastering" },
+    { imageFileName: "pages/services/production-backdrop.jpg", header: "Amplify Your Vision", subheader: "Photo & Video Services" },
+    { imageFileName: "pages/services/live-amps.jpg", header: "Amplify Yourself", subheader: "Full Service Audio/Video Projects" },
 ]
 pageContent: {
     anchor: "Services",
@@ -14,7 +16,7 @@ pageContent: {
         header: "Amplify Your Sound",
         contents: [
         "Our highly trained team of recording engineers will help you bring out the best in your sound. As experienced technicians and producers, we provide the skill and knowledge to take your musical expression to the next level.",
-        "Package: $600"],
+        "Audio Package: $600"],
         imageFileName: 'sections/education/lego-camp.jpg',
         jumpToAnchor: "Book",
         jumpToAnchorText: "Book Now",
@@ -25,7 +27,7 @@ pageContent: {
         header: "Amplify Your Vision",
         contents: [
         "Let us make you look good! This package provides you with a professional Photo and Video shoot to accompany your musical project. Work together with our team to make your visual concept a reality.",
-        "Package: $600"],
+        "Visual Package: $600"],
         imageFileName: 'sections/education/game-design-camp.jpg',
         jumpToAnchor: "Book",
         jumpToAnchorText: "Book Now",
@@ -35,8 +37,8 @@ pageContent: {
     {
         header: "Amplify Yourself",
         contents: [
-        "This is the full package! Record your song, have it mastered, get professional photography, album art, AND a music video all in one place and for one price.",
-        "Package: $1000"],
+        "This is the full package! Record your song, have it mixed & mastered, get professional photography, AND a music video all in one place and for one low price.",
+        "Full Package: $1000"],
         imageFileName: 'sections/education/minecraft-camp.jpg',
         jumpToAnchor: "Book",
         jumpToAnchorText: "Book Now",
