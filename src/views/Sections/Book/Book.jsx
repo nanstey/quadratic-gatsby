@@ -25,7 +25,7 @@ const Book = ({ className, category, date: dateString }) => {
   const config = {
     host: "quadraticsound.checkfront.com",
     target: "CHECKFRONT_WIDGET",
-    options: "tabs",
+    options: "tabs,hidesearch,hidedates",
     provider: "droplet",
     category_id: categoryMap[category],
   };
