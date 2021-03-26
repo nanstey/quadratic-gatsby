@@ -26,6 +26,7 @@ const Team = ({ className }) => {
               facebook
               instagram
               linkedin
+              soundcloud
             }
           }
         }

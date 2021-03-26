@@ -11,7 +11,7 @@ const TeamMember = ({
   imageAlt,
   header,
   subheader,
-  social: { twitter, facebook, linkedin, github, medium, instagram },
+  social: { twitter, facebook, linkedin, github, medium, instagram, soundcloud },
 }) => {
   const twitterPart = twitter ? <SocialIcons.Twitter userName={twitter} /> : null;
   const facebookPart = facebook ? <SocialIcons.Facebook userName={facebook} /> : null;
@@ -19,6 +19,7 @@ const TeamMember = ({
   const linkedinPart = linkedin ? <SocialIcons.Linkedin userName={linkedin} /> : null;
   const githubPart = github ? <SocialIcons.Github userName={github} /> : null;
   const mediumPart = medium ? <SocialIcons.Medium userName={medium} /> : null;
+  const soundcloudPart = soundcloud ? <SocialIcons.Soundcloud userName={soundcloud} /> : null;
 
   return (
     <div className="team-member">
@@ -36,6 +37,7 @@ const TeamMember = ({
         {linkedinPart}
         {githubPart}
         {mediumPart}
+        {soundcloudPart}
       </div>
     </div>
   );
@@ -53,6 +55,7 @@ TeamMember.propTypes = {
     linkedin: PropTypes.string,
     github: PropTypes.string,
     medium: PropTypes.string,
+    soundcloud: PropTypes.string,
   }),
 };
 
@@ -67,6 +70,7 @@ TeamMember.defaultProps = {
     linkedin: null,
     github: null,
     medium: null,
+    soundcloud: null,
   },
 };
 
