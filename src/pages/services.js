@@ -50,9 +50,9 @@ const IndexPage = () => {
     <>
       <Page>
         <HeroCarousel slides={slides} />
-        <ProgramPage className="bg-light" pageContent={pageContent} />
-        <Portfolio className="bg-light" />
-        <Book category="services" />
+        <ProgramPage pageContent={pageContent} />
+        <Book category="services" className="bg-light" />
+        <Portfolio />
         <Contact className="bg-light" />
       </Page>
     </>
