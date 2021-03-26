@@ -13,10 +13,11 @@ import useScript from "hooks/useScript";
 import "./Book.scss";
 
 const categoryMap = {
-  all: false,
+  all: "1,2,37",
   studio: 1,
   services: 2,
   education: 37,
+  test: 39,
 };
 
 const Book = ({ className, category }) => {
@@ -25,12 +26,8 @@ const Book = ({ className, category }) => {
     target: "CHECKFRONT_WIDGET",
     options: "tabs",
     provider: "droplet",
+    category_id: categoryMap[category],
   };
-
-  const categoryId = categoryMap[category];
-  if (categoryId) {
-    config.category_id = categoryId;
-  }
 
   useScript("//quadraticsound.checkfront.com/lib/interface--0.js", () => {
     new DROPLET.Widget(config).render();
