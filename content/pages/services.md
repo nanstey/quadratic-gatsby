@@ -21,7 +21,7 @@ pageContent: {
         jumpToAnchor: "Book",
         jumpToAnchorText: "Book Now",
         iconName: "",
-        texture: ""
+        texture: "concrete"
     },
     {
         header: "Amplify Your Vision",
@@ -32,18 +32,18 @@ pageContent: {
         jumpToAnchor: "Book",
         jumpToAnchorText: "Book Now",
         iconName: "",
-        texture: ""
+        texture: "axiom"
     },
     {
         header: "Amplify Yourself",
         contents: [
-        "This is the full package! Record your song, have it mixed & mastered, get professional photography, AND a music video all in one place and for one low price.",
+        "Record your song, have it mixed & mastered, get professional photography, AND a music video all in one place and for one low price.",
         "Full Package: $1000"],
         imageFileName: 'pages/services/self.jpg',
         jumpToAnchor: "Book",
         jumpToAnchorText: "Book Now",
         iconName: "",
-        texture: ""
+        texture: "thread"
     },
   ]
 }
