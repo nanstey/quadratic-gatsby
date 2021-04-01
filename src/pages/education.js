@@ -20,6 +20,7 @@ const IndexPage = () => {
               subheader
               imageFileName
             }
+            jumpToDate
           }
         }
       }
@@ -27,13 +28,14 @@ const IndexPage = () => {
   );
 
   const slides = markdownRemark.frontmatter?.slides || [];
+  const date = markdownRemark.frontmatter?.jumpToDate;
 
   return (
     <>
       <Page>
         <HeroCarousel slides={slides} />
         <Education className="bg-light" />
-        <Book category="education" />
+        <Book category="education" date={date} />
         <Contact className="bg-light" />
       </Page>
     </>
