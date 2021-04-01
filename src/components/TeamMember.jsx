@@ -11,8 +11,9 @@ const TeamMember = ({
   imageAlt,
   header,
   subheader,
-  social: { twitter, facebook, linkedin, github, medium, instagram, soundcloud },
+  social: { email, twitter, facebook, linkedin, github, medium, instagram, soundcloud },
 }) => {
+  const emailPart = email ? <SocialIcons.Email address={email} /> : null;
   const twitterPart = twitter ? <SocialIcons.Twitter userName={twitter} /> : null;
   const facebookPart = facebook ? <SocialIcons.Facebook userName={facebook} /> : null;
   const instagramPart = instagram ? <SocialIcons.Instagram userName={instagram} /> : null;
@@ -31,10 +32,11 @@ const TeamMember = ({
       <h4>{header}</h4>
       <p className="text-muted">{subheader}</p>
       <div>
+        {emailPart}
+        {linkedinPart}
         {twitterPart}
         {facebookPart}
         {instagramPart}
-        {linkedinPart}
         {githubPart}
         {mediumPart}
         {soundcloudPart}
@@ -49,6 +51,7 @@ TeamMember.propTypes = {
   header: PropTypes.string,
   subheader: PropTypes.string,
   social: PropTypes.shape({
+    email: PropTypes.string,
     twitter: PropTypes.string,
     facebook: PropTypes.string,
     instagram: PropTypes.string,
@@ -64,6 +67,7 @@ TeamMember.defaultProps = {
   header: "",
   subheader: "",
   social: {
+    email: null,
     twitter: null,
     facebook: null,
     instagram: null,

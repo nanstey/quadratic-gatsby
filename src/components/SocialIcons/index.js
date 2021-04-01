@@ -1,3 +1,4 @@
+export { default as Email } from "./Email";
 export { default as Facebook } from "./Facebook";
 export { default as Instagram } from "./Insta";
 export { default as Youtube } from "./Youtube";

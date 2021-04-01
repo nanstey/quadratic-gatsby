@@ -23,6 +23,7 @@ const Team = ({ className }) => {
             key
             imageFileName
             social {
+              email
               facebook
               instagram
               linkedin
