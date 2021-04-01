@@ -1,8 +1,9 @@
 /* global DROPLET */
 
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { string } from "prop-types";
 import { Row } from "react-bootstrap";
+import dayjs from "dayjs";
 
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -20,7 +21,7 @@ const categoryMap = {
   test: 39,
 };
 
-const Book = ({ className, category }) => {
+const Book = ({ className, category, date: dateString }) => {
   const config = {
     host: "quadraticsound.checkfront.com",
     target: "CHECKFRONT_WIDGET",
@@ -28,6 +29,13 @@ const Book = ({ className, category }) => {
     provider: "droplet",
     category_id: categoryMap[category],
   };
+
+  if (dateString) {
+    const date = dayjs(dateString);
+    if (date.isAfter(dayjs())) {
+      config.date = date.format("YYYYMMDD");
+    }
+  }
 
   useScript("//quadraticsound.checkfront.com/lib/interface--0.js", () => {
     new DROPLET.Widget(config).render();
@@ -82,11 +90,13 @@ const Book = ({ className, category }) => {
 Book.propTypes = {
   className: PropTypes.string,
   category: PropTypes.oneOf(["all", "studio", "services", "education"]),
+  date: string,
 };
 
 Book.defaultProps = {
   className: null,
   category: "all",
+  date: null,
 };
 
 export default Book;
