@@ -12,11 +12,11 @@ p {
 }
 
 a {
-  color: $primary;
+  color: $secondary;
   text-decoration: none;
   background-color: transparent;
   &:hover {
-    color: $secondary;
+    color: $primary;
     text-decoration: none;
   }
 }
