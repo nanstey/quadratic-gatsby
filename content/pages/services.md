@@ -17,7 +17,7 @@ pageContent: {
         contents: [
         "Our highly trained team of recording engineers will help you bring out the best in your sound. As experienced technicians and producers, we provide the skill and knowledge to take your musical expression to the next level.",
         "This package includes one full day in the studio with an recording engineer, and a full day of post-production. This is usually sufficient for recording a single multi-tracked song, or 2-4 songs off-the-floor.",
-        "Audio Package: $600"],
+        "Audio Package: $550"],
         imageFileName: 'pages/services/sound.jpg',
         jumpToAnchor: "Book",
         jumpToAnchorText: "Book Now",
@@ -29,7 +29,7 @@ pageContent: {
         contents: [
         "Let us make you look good! This package provides you with a professional Photo and Video shoot to accompany your musical project. Work together with our team to make your visual concept a reality.",
         "This package includes one full day of production with a camera operator, and a full day of post-production. Production day can be at the studio or some other location of your choosing. Travel time should be factored in for production day.", 
-        "Visual Package: $600"],
+        "Visual Package: $650"],
         imageFileName: 'pages/services/vision.jpg',
         jumpToAnchor: "Book",
         jumpToAnchorText: "Book Now",
