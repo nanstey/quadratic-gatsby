@@ -52,7 +52,7 @@ const IndexPage = () => {
         <HeroCarousel slides={slides} />
         <ProgramPage pageContent={pageContent} />
         <Portfolio className="bg-light" />
-        <Book category="test" />
+        <Book category="services" />
         <Contact className="bg-light" />
       </Page>
     </>
