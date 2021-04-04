@@ -13,6 +13,6 @@ module.exports = {
     "video game design",
   ],
   description: "Studio Rentals & Multimedia Services",
-  author: "nanstey",
+  author: "Quadratic Sound",
   trackingId: "GTM-W7BSV7W",
 };
