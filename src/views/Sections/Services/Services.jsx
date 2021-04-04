@@ -11,7 +11,7 @@ import PageSection from "components/PageSection";
 const Services = ({ className }) => {
   const { markdownRemark = {} } = useStaticQuery(graphql`
     query ServicesQuery {
-      markdownRemark(fields: { fileName: { regex: "/services/i" } }) {
+      markdownRemark(fileAbsolutePath: { regex: "/sections/1.Services/i" }) {
         frontmatter {
           anchor
           header

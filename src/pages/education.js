@@ -2,8 +2,8 @@ import React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
 import Page from "components/Page";
+import ProgramPage from "components/ProgramPage";
 import HeroCarousel from "components/HeroCarousel";
-import Education from "views/Sections/Education";
 import Book from "views/Sections/Book";
 import Contact from "views/Sections/Contact";
 import "utils/fixFontAwesome";
@@ -21,6 +21,21 @@ const IndexPage = () => {
               imageFileName
             }
             jumpToDate
+            pageContent {
+              anchor
+              header
+              subheader
+              contents
+              programs {
+                header
+                contents
+                imageFileName
+                jumpToAnchor
+                jumpToAnchorText
+                iconName
+                texture
+              }
+            }
           }
         }
       }
@@ -29,12 +44,13 @@ const IndexPage = () => {
 
   const slides = markdownRemark.frontmatter?.slides || [];
   const date = markdownRemark.frontmatter?.jumpToDate;
+  const pageContent = markdownRemark.frontmatter.pageContent;
 
   return (
     <>
       <Page>
         <HeroCarousel slides={slides} />
-        <Education className="bg-light" />
+        <ProgramPage className="bg-light" pageContent={pageContent} />
         <Book category="education" date={date} />
         <Contact className="bg-light" />
       </Page>

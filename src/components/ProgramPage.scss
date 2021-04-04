@@ -1,0 +1,68 @@
+// Styling for the event section
+.program-page-paragraph-contents {
+  padding: 0 15px;
+}
+
+.program {
+  margin-bottom: 40px;
+  padding: 20px;
+  .program-image {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    &.left {
+      left: -22px;
+    }
+    &.right {
+      right: -22px;
+    }
+  }
+  .program-description {
+    max-width: 600px;
+  }
+}
+
+.bricks {
+  background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png");
+}
+
+.graph {
+  background-image: url("https://www.transparenttextures.com/patterns/graphy.png");
+}
+
+.blocks {
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+
+.dots {
+  background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");
+}
+
+.concrete {
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+.axiom {
+  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+}
+
+.thread {
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+}
+
+@media (max-width: 992px) {
+  .program {
+    margin-bottom: 0;
+    padding: 40px 0;
+    .program-image {
+      &.left,
+      &.right {
+        right: 0;
+        left: 0;
+      }
+    }
+    .program-description {
+      margin-top: 20px;
+    }
+  }
+}
