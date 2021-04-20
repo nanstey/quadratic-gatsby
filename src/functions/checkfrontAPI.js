@@ -9,7 +9,7 @@ exports.handler = async function (event, context) {
   if (!endpoint) {
     return {
       statusCode: 400,
-      body: JSON.stringify("You must provide a route in the query parameters"),
+      body: "You must provide a route in the query parameters",
     };
   }
 
