@@ -5,6 +5,7 @@ import Page from "components/Page";
 import ProgramPage from "components/ProgramPage";
 import HeroCarousel from "components/HeroCarousel";
 import Book from "views/Sections/Book";
+import CustomBook from "views/Sections/CustomBook";
 import Contact from "views/Sections/Contact";
 import "utils/fixFontAwesome";
 import "../style/main.scss";
@@ -51,6 +52,7 @@ const IndexPage = () => {
       <Page>
         <HeroCarousel slides={slides} />
         <ProgramPage className="bg-light" pageContent={pageContent} />
+        <CustomBook />
         <Book category="education" date={date} />
         <Contact className="bg-light" />
       </Page>

@@ -29,6 +29,7 @@
     "gatsby-transformer-remark": "^2.6.34",
     "gatsby-transformer-sharp": "^2.4.4",
     "google-map-react": "^2.1.9",
+    "netlify-cli": "^3.21.0",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "ramda": "^0.27.0",
@@ -39,7 +40,8 @@
     "react-helmet": "^6.1.0",
     "react-player": "^2.6.2",
     "react-scroll": "^1.7.16",
-    "throttle-debounce": "^2.1.0"
+    "throttle-debounce": "^2.1.0",
+    "underscore": "^1.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
