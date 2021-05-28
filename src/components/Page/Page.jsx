@@ -5,8 +5,6 @@ import SEO from "components/SEO";
 import Navbar from "views/Navbar";
 import Footer from "views/Footer";
 
-import "./PageSection.scss";
-
 const Page = ({ children }) => {
   return (
     <>
