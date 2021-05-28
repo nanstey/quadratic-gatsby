@@ -8,6 +8,11 @@
     .image {
       height: 66vh;
     }
+    .image-card-text-container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
 
@@ -21,3 +26,4 @@
     }
   }
 }
+
