@@ -15,7 +15,7 @@ const HeroCarousel = ({ slides }) => {
       activeIndex={activeSlideIndex}
       slide={true}
       controls={false}
-      interval={6000}
+      interval={5000}
       pause={false}
       wrap={true}
       indicators={false}

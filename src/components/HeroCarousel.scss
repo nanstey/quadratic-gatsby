@@ -2,4 +2,22 @@
   background-color: black;
   border: black;
   border-width: 1px;
+
+  .image-card {
+    height: 66vh;
+    .image {
+      height: 66vh;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-carousel {
+    .image-card {
+      height: 100vh;
+      .image {
+        height: 100vh;
+      }
+    }
+  }
 }
