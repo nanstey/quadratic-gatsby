@@ -6,7 +6,7 @@ import { Row, Col, Button } from "react-bootstrap";
 
 import Icon from "../Icon";
 import SectionHeader from "../SectionHeader";
-import PageSection from "../PageSection/PageSection";
+import PageSection from "../PageSection";
 import Image from "../Image";
 
 import "./ProgramPage.scss";
