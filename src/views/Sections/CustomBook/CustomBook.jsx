@@ -27,14 +27,13 @@ const CustomBook = () => {
   return (
     <PageSection id="customBook">
       <Row>
-        <SectionHeader header="Pick a Course" subheader="" />
+        <SectionHeader header="Pick a Camp" subheader="" />
         <Container className="course-container">
-        {items.map((item) => {
-          return <CourseCard item={item} key={item.itemId} />;
-        })}
-      </Container>
+          {items.map((item) => {
+            return <CourseCard item={item} key={item.itemId} />;
+          })}
+        </Container>
       </Row>
-      
     </PageSection>
   );
 };
