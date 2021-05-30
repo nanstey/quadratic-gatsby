@@ -1,30 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import axios from "axios";
-import { sortBy } from "underscore";
 import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
 import { Row, Col, Button } from "react-bootstrap";
+import useItems from "../../../hooks/useItems";
 
 import "./CustomBook.scss";
 
 const CustomBook = () => {
-  const [items, setItems] = useState([]);
+  const items = useItems();
 
-  useEffect(() => {
-    axios
-      .get("api/checkfrontAPI", {
-        params: { route: "item", category_id: 37 },
-      })
-      .then((res) => {
-        setItems(sortBy(Object.values(res.data.items), "pos").reverse());
-      })
-      .catch((err) => {
-        console.log("Error: ", err.message);
-      });
-  }, []);
-
+  // eslint-disable-next-line no-console
   console.log(items);
 
   return (
@@ -33,7 +20,7 @@ const CustomBook = () => {
         <SectionHeader header="Pick a Course" subheader="" />
       </Row>
       {items.map((item) => {
-        return <Course item={item} key={item.item_id} />;
+        return <Course item={item} key={item.itemId} />;
       })}
     </PageSection>
   );
@@ -45,21 +32,21 @@ const Course = ({ item }) => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className="course" key={item.item_id}>
+    <div className="course" key={item.itemId}>
       <a role="button" tabIndex={0} onClick={() => setShowMore(!showMore)}>
-        <h2 className="course-title" key={item.item_id}>
-          {item.name}
+        <h2 className="course-title" key={item.itemId}>
+          {item.title}
         </h2>
       </a>
       <Row>
         <Col lg={4} className="order-lg-8">
           <div className="course-image">
-            <img className="img-fluid" src={item.image["1"].url} alt={item.name} />
+            <img className="img-fluid" src={item.image["1"].url} alt={item.title} />
             <Button
               size="xl"
               variant="primary"
               className="text-uppercase"
-              href={`https://quadraticsound.checkfront.com/reserve?item_id=${item.item_id}`}
+              href={`https://quadraticsound.checkfront.com/reserve?item_id=${item.itemId}`}
             >
               Book Now
             </Button>
@@ -98,8 +85,8 @@ const Course = ({ item }) => {
 
 Course.propTypes = {
   item: PropTypes.shape({
-    item_id: PropTypes.number,
-    name: PropTypes.string,
+    itemId: PropTypes.number,
+    title: PropTypes.string,
     image: PropTypes.object,
     summary: PropTypes.string,
     details: PropTypes.string,

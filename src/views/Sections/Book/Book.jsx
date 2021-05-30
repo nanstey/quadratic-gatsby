@@ -14,7 +14,7 @@ import useScript from "hooks/useScript";
 import "./Book.scss";
 
 const categoryMap = {
-  all: "1,2,37",
+  all: "37,1,2",
   studio: 1,
   services: 2,
   education: 37,

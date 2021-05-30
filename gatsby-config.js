@@ -76,6 +76,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-offline",
+    "gatsby-plugin-nullish-coalescing-operator",
     {
       resolve: "gatsby-plugin-sass",
       options: {
