@@ -1,31 +1,56 @@
 #customBook {
-  .course {
-    border: solid 1px;
-    padding: 15px;
+}
 
-    .course-title {
-      margin-top: 30px;
-      &:hover {
-        color: $primary;
-      }
-    }
+.course-container {
+  display: block;
+}
 
-    .course-image {
-      width: 100%;
-      // img {
-      //   width: 25rem;
-      // }
-    }
+.course-card-wrapper {
+  float: left;
+  width: 33%;
+}
 
-    .course-description {
-      margin-top: 15px;
-    }
+.course-card {
+  min-height: 25rem;
+  text-align: center;
+  margin: 15px;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0;
+  transition: bottom 0.125s linear, left 0.125s linear, box-shadow 0.125s linear;
 
-    .show-more {
-      color: $secondary;
-      &:hover {
-        color: $primary;
-      }
+  &:hover {
+    bottom: 3px;
+    left: 3px;
+    box-shadow: -3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  .course-card-image {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  }
+
+  .card-body {
+    position: relative;
+
+    .book-button {
+      position: absolute;
+      bottom: 0;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
     }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .course-card-wrapper {
+    width: 50%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .course-card-wrapper {
+    width: 100%;
+    display: block;
   }
 }

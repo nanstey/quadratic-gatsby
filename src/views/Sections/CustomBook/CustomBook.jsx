@@ -3,10 +3,20 @@ import PropTypes from "prop-types";
 
 import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
-import { Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import useItems from "../../../hooks/useItems";
 
 import "./CustomBook.scss";
+
+function chunkArray(array, chunkSize) {
+  const results = [];
+
+  while (array.length) {
+    results.push(array.splice(0, chunkSize));
+  }
+
+  return results;
+}
 
 const CustomBook = () => {
   const items = useItems();
@@ -18,15 +28,50 @@ const CustomBook = () => {
     <PageSection id="customBook">
       <Row>
         <SectionHeader header="Pick a Course" subheader="" />
+        <Container className="course-container">
+        {items.map((item) => {
+          return <CourseCard item={item} key={item.itemId} />;
+        })}
+      </Container>
       </Row>
-      {items.map((item) => {
-        return <Course item={item} key={item.itemId} />;
-      })}
+      
     </PageSection>
   );
 };
 
 export default CustomBook;
+
+
+const CourseCard = ({ item }) => {
+  return (
+    <div className="course-card-wrapper">
+      <Card className="course-card" key={item.itemId}>
+        <Card.Img className="course-card-image" variant="top" src={item.image["1"].url} />
+        <Card.Title>{item.title}</Card.Title>
+        <Card.Body>
+          <Button
+            size="lg"
+            variant="primary"
+            className="text-uppercase book-button"
+            href={`https://quadraticsound.checkfront.com/reserve?item_id=${item.itemId}`}
+          >
+            Book Now
+          </Button>
+        </Card.Body>
+      </Card>
+    </div>
+  );
+};
+
+CourseCard.propTypes = {
+  item: PropTypes.shape({
+    itemId: PropTypes.number,
+    title: PropTypes.string,
+    image: PropTypes.object,
+    summary: PropTypes.string,
+    details: PropTypes.string,
+  }).isRequired,
+};
 
 const Course = ({ item }) => {
   const [showMore, setShowMore] = useState(false);
