@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
-import { Container, Row, Card, Dropdown } from "react-bootstrap";
+import { Container, Row, Card, Dropdown, Spinner } from "react-bootstrap";
 import { range } from "underscore";
 
 import useItems from "../../../hooks/useItems";
@@ -19,22 +19,32 @@ const CustomBook = () => {
       <Row>
         <SectionHeader header="Pick a Camp" subheader="" />
         <Container className="course-container">
-          <div className="course-filters">
-            <Dropdown>
-              <Dropdown.Toggle className="dropdown-primary" variant="primary" id="dropdown-basic">
-                {selectedAge ? `Age: ${selectedAge}` : "Select Age"}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                {range(6, 15).map((age) => (
-                  <Dropdown.Item key={age} onClick={() => setSelectedAge(age)}>
-                    {age}
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
+          {items.length ? (
+            <div className="course-filters">
+              <Dropdown>
+                <Dropdown.Toggle className="dropdown-primary" variant="primary" id="dropdown-basic">
+                  {selectedAge ? `Age: ${selectedAge}` : "Select Age"}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {range(6, 15).map((age) => (
+                    <Dropdown.Item key={age} onClick={() => setSelectedAge(age)}>
+                      {age}
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          ) : (
+              <div className="center-align">
+                <Spinner animation="border" role="status">
+                  <span className="sr-only">Loading...</span>
+                </Spinner>
+            </div>
+          )}
           {items.map((item) => {
-            const active = !selectedAge || (selectedAge >= item.ageMin && selectedAge <= item.ageMax);
+            const active =
+             
+              !selectedAge || (selectedAge >= item.ageMin && selectedAge <= item.ageMax);
             return <CourseCard key={item.itemId} item={item} active={active} />;
           })}
         </Container>
