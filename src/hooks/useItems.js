@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 import axios from "axios";
-import { sortBy, values } from "underscore";
+import { sortBy, values, range } from "underscore";
 
 function itemFactory(items) {
   const newItems = items.map((item) => {
@@ -25,27 +25,49 @@ function itemFactory(items) {
       summary: item.summary,
       details: item.details,
       image: item.image,
+      available: item.rate.available,
+      price: item.rate.summary.price.total,
     };
   });
 
   return newItems;
 }
 
+function getDateArray() {
+  const startDate = dayjs("2021-07-06", "YYYY-MM-D");
+
+  return range(8).map((i) => startDate.add(i * 7, "days"));
+}
+
 export default function useItems() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/api/checkfrontAPI", {
-        params: { route: "item", category_id: 37 },
-      })
-      .then((res) => {
-        setItems(itemFactory(sortBy(values(res.data.items), "pos").reverse()));
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log("Error: ", err.message);
-      });
+    async function getItems() {
+      const dateArray = getDateArray();
+
+      const promises = dateArray.map((date) =>
+        axios.get("/api/checkfrontAPI", {
+          params: { route: "item", category_id: 37, date: date.format("YYYYMMDD") },
+        }),
+      );
+
+      axios.all(promises).then(
+        axios.spread((...responses) => {
+          const spreadItems = responses.flatMap((res) => {
+            return values(res.data.items).filter((item) => item.item_id !== 155);
+          });
+
+            const itemz = itemFactory(sortBy(spreadItems, "pos").reverse());
+            
+            console.log(itemz);
+
+            setItems(itemz);
+        }),
+      );;
+    }
+
+    getItems();
   }, []);
 
   return items;

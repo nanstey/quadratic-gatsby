@@ -53,5 +53,9 @@ CourseCard.propTypes = {
     image: PropTypes.object,
     summary: PropTypes.string,
     details: PropTypes.string,
+    price: PropTypes.string,
+    available: PropTypes.number,
+    ageMin: PropTypes.number,
+    ageMax: PropTypes.number,
   }).isRequired,
 };
