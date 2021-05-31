@@ -31,19 +31,26 @@ const CustomBook = () => {
                       {age}
                     </Dropdown.Item>
                   ))}
+                  {selectedAge && (
+                    <>
+                      <Dropdown.Divider />
+                      <Dropdown.Item key={0} onClick={() => setSelectedAge(null)}>
+                        clear
+                      </Dropdown.Item>
+                    </>
+                  )}
                 </Dropdown.Menu>
               </Dropdown>
             </div>
           ) : (
-              <div className="center-align">
-                <Spinner animation="border" role="status">
-                  <span className="sr-only">Loading...</span>
-                </Spinner>
+            <div className="center-align">
+              <Spinner animation="border" role="status">
+                <span className="sr-only">Loading...</span>
+              </Spinner>
             </div>
           )}
           {items.map((item) => {
             const active =
-             
               !selectedAge || (selectedAge >= item.ageMin && selectedAge <= item.ageMax);
             return <CourseCard key={item.itemId} item={item} active={active} />;
           })}
