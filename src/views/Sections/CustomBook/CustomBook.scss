@@ -3,8 +3,12 @@
 }
 
 .course-filters {
-  margin-left: 15px;
-  .dropdown-primary, .dropdown-primary:hover {
+  text-align: center;
+  .btn-group {
+    min-width: 235px;
+    margin: 5px 15px;
+  }
+  .dropdown-primary button, .dropdown-primary:hover button {
     color: white;
     background-color: #007bff !important;
   }

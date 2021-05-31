@@ -3,16 +3,34 @@ import PropTypes from "prop-types";
 
 import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
-import { Container, Row, Card, Dropdown, Spinner } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Card,
+  Dropdown,
+  DropdownButton,
+  ButtonGroup,
+  Spinner,
+} from "react-bootstrap";
 import { range } from "underscore";
 
 import useItems from "../../../hooks/useItems";
 
 import "./CustomBook.scss";
 
+const programs = ["LEGO", "Game Design", "Minecraft", "Science", "Stop Motion"];
+
 const CustomBook = () => {
   const items = useItems();
   const [selectedAge, setSelectedAge] = useState(null);
+  const [selectedProgram, setSelectedProgram] = useState(null);
+
+  function isActive(item) {
+    return (
+      (!selectedAge || (selectedAge >= item.ageMin && selectedAge <= item.ageMax)) &&
+      (!selectedProgram || item.tags.includes(selectedProgram))
+    );
+  }
 
   return (
     <PageSection id="CustomBook">
@@ -21,26 +39,48 @@ const CustomBook = () => {
         <Container className="course-container">
           {items.length ? (
             <div className="course-filters">
-              <Dropdown>
-                <Dropdown.Toggle className="dropdown-primary" variant="primary" id="dropdown-basic">
-                  {selectedAge ? `Age: ${selectedAge}` : "Select Age"}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {range(6, 15).map((age) => (
-                    <Dropdown.Item key={age} onClick={() => setSelectedAge(age)}>
-                      {age}
+              <DropdownButton
+                as={ButtonGroup}
+                className="dropdown-primary"
+                variant="primary"
+                id="dropdown-age"
+                title={selectedAge ? `Age: ${selectedAge}` : "Select Age"}
+              >
+                {range(6, 15).map((age) => (
+                  <Dropdown.Item key={age} onClick={() => setSelectedAge(age)}>
+                    {age}
+                  </Dropdown.Item>
+                ))}
+                {selectedAge && (
+                  <>
+                    <Dropdown.Divider />
+                    <Dropdown.Item key={0} onClick={() => setSelectedAge(null)}>
+                      clear selection
                     </Dropdown.Item>
-                  ))}
-                  {selectedAge && (
-                    <>
-                      <Dropdown.Divider />
-                      <Dropdown.Item key={0} onClick={() => setSelectedAge(null)}>
-                        clear
-                      </Dropdown.Item>
-                    </>
-                  )}
-                </Dropdown.Menu>
-              </Dropdown>
+                  </>
+                )}
+              </DropdownButton>
+              <DropdownButton
+                as={ButtonGroup}
+                className=""
+                variant="secondary"
+                id="dropdown-program"
+                title={selectedProgram ? `Program: ${selectedProgram}` : "Select Program"}
+              >
+                {programs.map((program) => (
+                  <Dropdown.Item key={program} onClick={() => setSelectedProgram(program)}>
+                    {program}
+                  </Dropdown.Item>
+                ))}
+                {selectedProgram && (
+                  <>
+                    <Dropdown.Divider />
+                    <Dropdown.Item key={0} onClick={() => setSelectedProgram(null)}>
+                      clear selection
+                    </Dropdown.Item>
+                  </>
+                )}
+              </DropdownButton>
             </div>
           ) : (
             <div className="center-align">
@@ -49,11 +89,9 @@ const CustomBook = () => {
               </Spinner>
             </div>
           )}
-          {items.map((item) => {
-            const active =
-              !selectedAge || (selectedAge >= item.ageMin && selectedAge <= item.ageMax);
-            return <CourseCard key={item.itemId} item={item} active={active} />;
-          })}
+          {items.map((item) => (
+            <CourseCard key={item.itemId} item={item} active={isActive(item)} />
+          ))}
         </Container>
       </Row>
     </PageSection>
@@ -67,7 +105,7 @@ const CourseCard = ({ item, active }) => {
   const baseUrl = "https://quadraticsound.checkfront.com/reserve?item_id=";
   const dateString = item.dateStart.format("YYYYMMDD");
 
-  const activeClass = active ? 'active' : 'inactive';
+  const activeClass = active ? "active" : "inactive";
 
   const itemLink = item.available
     ? `${baseUrl}${item.itemId}`
@@ -110,6 +148,7 @@ CourseCard.propTypes = {
     ageMax: PropTypes.number,
     dateStart: PropTypes.object,
     dateEnd: PropTypes.object,
+    tags: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
-  active: PropTypes.bool.isRequired
+  active: PropTypes.bool.isRequired,
 };
