@@ -36,7 +36,7 @@ export default function useItems() {
 
   useEffect(() => {
     axios
-      .get("api/checkfrontAPI", {
+      .get("/api/checkfrontAPI", {
         params: { route: "item", category_id: 37 },
       })
       .then((res) => {
