@@ -42,9 +42,19 @@ const CourseCard = ({ item }) => {
         <Card className="course-card" key={item.itemId}>
           {!item.available && <span className="sold-out">SOLD OUT</span>}
           <Card.Img className="course-card-image" variant="top" src={item.image["1"].url} />
+          <Card.Body className="course-card-body">
+            <div className="badge-container">
+              <span className="badge badge-pill badge-primary">{`Ages ${item.ageMin}-${item.ageMax}`}</span>
+              <span className="badge badge-pill badge-info">
+                {item.dateStart.format("MMM D")}-{item.dateEnd.format("D")}
+              </span>
+              <span className="badge badge-pill badge-success">{item.price}</span>
+            </div>
+          </Card.Body>
           <Card.Header className="course-card-header">
             <h5 className="course-card-title">{item.title}</h5>
           </Card.Header>
+
         </Card>
       </a>
     </div>
