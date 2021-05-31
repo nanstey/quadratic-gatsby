@@ -12,7 +12,7 @@ const CustomBook = () => {
   const items = useItems();
 
   return (
-    <PageSection id="customBook">
+    <PageSection id="CustomBook">
       <Row>
         <SectionHeader header="Pick a Camp" subheader="" />
         <Container className="course-container">

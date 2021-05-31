@@ -11,7 +11,9 @@ import Image from "../Image";
 
 import "./ProgramPage.scss";
 
-const ProgramImage = ({ float, imageFileName, scrollToSection }) => {
+const ProgramImage = ({ float, imageFileName, jumpToAnchor }) => {
+  const scrollToSection = useSmoothScrollTo(jumpToAnchor);
+
   return (
     <Col lg={6} className={float === "right" ? "order-lg-12" : ""}>
       <div className={`program-image ${float}`}>
@@ -26,15 +28,18 @@ const ProgramImage = ({ float, imageFileName, scrollToSection }) => {
 ProgramImage.propTypes = {
   float: PropTypes.string,
   imageFileName: PropTypes.string.isRequired,
-  scrollToSection: PropTypes.func.isRequired,
+  jumpToAnchor: PropTypes.string.isRequired,
 };
 
 ProgramImage.defaultProps = {
   float: "left",
 };
 
-const ProgramDescription = ({ header, contents, iconName, jumpToAnchorText, scrollToSection }) => {
+const ProgramDescription = ({ header, contents, iconName, jumpToAnchorText, jumpToAnchor }) => {
   const IconComponent = iconName ? <Icon iconName={iconName} /> : null;
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const scrollToSection = useSmoothScrollTo(jumpToAnchor);
+
   return (
     <Col lg={6} className="center-align">
       <div className="program-description">
@@ -57,14 +62,44 @@ ProgramDescription.propTypes = {
   contents: PropTypes.arrayOf(PropTypes.string).isRequired,
   iconName: PropTypes.string.isRequired,
   jumpToAnchorText: PropTypes.string.isRequired,
-  scrollToSection: PropTypes.func.isRequired,
+  jumpToAnchor: PropTypes.string.isRequired,
 };
+
+const Program = ({ program: { header, contents, imageFileName, jumpToAnchor, jumpToAnchorText, iconName, texture }, index}) => {
+  
+
+  return (
+    <Row className={`text-center program ${texture}`} key={header}>
+      <ProgramImage
+        float={index % 2 ? "left" : "right"}
+        imageFileName={imageFileName}
+        jumpToAnchor={jumpToAnchor}
+      />
+      <ProgramDescription
+        header={header}
+        contents={contents}
+        iconName={iconName}
+        jumpToAnchorText={jumpToAnchorText}
+        jumpToAnchor={jumpToAnchor}
+      />
+    </Row>)
+}
+
+Program.propTypes = {
+  program: PropTypes.shape({
+      header: PropTypes.string,
+      contents: PropTypes.arrayOf(PropTypes.string),
+      imageFileName: PropTypes.string,
+      jumpToAnchor: PropTypes.string,
+      jumpToAnchorText: PropTypes.string,
+      iconName: PropTypes.string,
+      texture: PropTypes.string,
+  }).isRequired,
+  index: PropTypes.number.isRequired
+}
 
 const ProgramPage = ({ className, pageContent }) => {
   const { anchor, header: rootHeader, subheader: rootSubHeader, contents, programs } = pageContent;
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const scrollToSection = useSmoothScrollTo("Book");
 
   return programs.length ? (
     <PageSection className={className} id={anchor}>
@@ -78,22 +113,10 @@ const ProgramPage = ({ className, pageContent }) => {
           </div>
         </Col>
       </Row>
-      {programs.map((program, index) => (
-        <Row className={`text-center program ${program.texture}`} key={program.header}>
-          <ProgramImage
-            float={index % 2 ? "left" : "right"}
-            imageFileName={program.imageFileName}
-            scrollToSection={scrollToSection}
-          />
-          <ProgramDescription
-            header={program.header}
-            contents={program.contents}
-            iconName={program.iconName}
-            jumpToAnchorText={program.jumpToAnchorText}
-            scrollToSection={scrollToSection}
-          />
-        </Row>
-      ))}
+      {programs.map((program, index) => {
+        return <Program program={program} index={index} key={program.header}/>
+        }
+      )}
     </PageSection>
   ) : null;
 };
