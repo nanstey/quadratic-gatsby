@@ -5,14 +5,8 @@ import { sortBy, values, range } from "underscore";
 
 function itemFactory(items) {
   const newItems = items.map((item) => {
-    const [title, ageRange, dateRange] = item.name.split(" // ").reverse();
-
+    const [title, ageRange] = item.name.split(" // ").reverse();
     const [ageMin, ageMax] = ageRange ? ageRange.slice(5).split("-") : [6, 14];
-
-    const [month, days] = dateRange ? dateRange.split(" ") : [];
-    const [dayStart, dayEnd] = days ? days.split("-") : [];
-    const dateStart = dayStart ? dayjs(`2021 ${month} ${dayStart}`, "YYYY MMM D") : null;
-    const dateEnd = dayEnd ? dayjs(`2021 ${month} ${dayEnd}`, "YYYY MMM D") : null;
 
     return {
       itemId: item.item_id,
@@ -20,8 +14,8 @@ function itemFactory(items) {
       title,
       ageMin: Number(ageMin),
       ageMax: Number(ageMax),
-      dateStart,
-      dateEnd,
+      dateStart: dayjs(item.rate.start_date, "YYYYMMDD"),
+      dateEnd: dayjs(item.rate.end_date, "YYYYMMDD"),
       summary: item.summary,
       details: item.details,
       image: item.image,
@@ -58,11 +52,7 @@ export default function useItems() {
             return values(res.data.items).filter((item) => item.item_id !== 155);
           });
 
-            const itemz = itemFactory(sortBy(spreadItems, "pos").reverse());
-            
-            console.log(itemz);
-
-            setItems(itemz);
+          setItems(itemFactory(sortBy(spreadItems, "pos").reverse()));
         }),
       );;
     }

@@ -38,14 +38,9 @@ const CourseCard = ({ item }) => {
 
   return (
     <div className="course-card-wrapper">
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href={itemLink}
-        title={itemTooltip}
-      >
+      <a target="_blank" rel="noreferrer" href={itemLink} title={itemTooltip}>
         <Card className="course-card" key={item.itemId}>
-          {!item.available && <a className="sold-out">SOLD OUT</a>}
+          {!item.available && <span className="sold-out">SOLD OUT</span>}
           <Card.Img className="course-card-image" variant="top" src={item.image["1"].url} />
           <Card.Header className="course-card-header">
             <h5 className="course-card-title">{item.title}</h5>
