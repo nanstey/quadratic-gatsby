@@ -2,6 +2,14 @@
   display: block;
 }
 
+.course-filters {
+  margin-left: 15px;
+  .dropdown-primary, .dropdown-primary:hover {
+    color: white;
+    background-color: #007bff !important;
+  }
+}
+
 .course-card-wrapper {
   float: left;
   width: 33%;
@@ -21,6 +29,11 @@
     bottom: 3px;
     left: 3px;
     box-shadow: -3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+  }
+
+  &.inactive {
+    filter: grayscale(1);
+    opacity: 0.5;
   }
 
   .sold-out {
