@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import PageSection from "components/PageSection";
 import SectionHeader from "components/SectionHeader";
-import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Container, Row, Card } from "react-bootstrap";
 import useItems from "../../../hooks/useItems";
 
 import "./CustomBook.scss";
@@ -28,14 +28,24 @@ const CustomBook = () => {
 export default CustomBook;
 
 const CourseCard = ({ item }) => {
+  const itemTooltip = item.available ? "Book Now" : "Join Waitlist";
+  const baseUrl = "https://quadraticsound.checkfront.com/reserve?item_id=";
+  const dateString = item.dateStart.format("YYYYMMDD");
+
+  const itemLink = item.available
+    ? `${baseUrl}${item.itemId}`
+    : `${baseUrl}155&start_date=${dateString}`;
+
   return (
     <div className="course-card-wrapper">
       <a
         target="_blank"
         rel="noreferrer"
-        href={`https://quadraticsound.checkfront.com/reserve?item_id=${item.itemId}`}
+        href={itemLink}
+        title={itemTooltip}
       >
         <Card className="course-card" key={item.itemId}>
+          {!item.available && <a className="sold-out">SOLD OUT</a>}
           <Card.Img className="course-card-image" variant="top" src={item.image["1"].url} />
           <Card.Header className="course-card-header">
             <h5 className="course-card-title">{item.title}</h5>
@@ -57,5 +67,7 @@ CourseCard.propTypes = {
     available: PropTypes.number,
     ageMin: PropTypes.number,
     ageMax: PropTypes.number,
+    dateStart: PropTypes.object,
+    dateEnd: PropTypes.object,
   }).isRequired,
 };
