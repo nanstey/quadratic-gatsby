@@ -8,21 +8,8 @@ import useItems from "../../../hooks/useItems";
 
 import "./CustomBook.scss";
 
-function chunkArray(array, chunkSize) {
-  const results = [];
-
-  while (array.length) {
-    results.push(array.splice(0, chunkSize));
-  }
-
-  return results;
-}
-
 const CustomBook = () => {
   const items = useItems();
-
-  // eslint-disable-next-line no-console
-  console.log(items);
 
   return (
     <PageSection id="customBook">
@@ -40,24 +27,21 @@ const CustomBook = () => {
 
 export default CustomBook;
 
-
 const CourseCard = ({ item }) => {
   return (
     <div className="course-card-wrapper">
-      <Card className="course-card" key={item.itemId}>
-        <Card.Img className="course-card-image" variant="top" src={item.image["1"].url} />
-        <Card.Title>{item.title}</Card.Title>
-        <Card.Body>
-          <Button
-            size="lg"
-            variant="primary"
-            className="text-uppercase book-button"
-            href={`https://quadraticsound.checkfront.com/reserve?item_id=${item.itemId}`}
-          >
-            Book Now
-          </Button>
-        </Card.Body>
-      </Card>
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href={`https://quadraticsound.checkfront.com/reserve?item_id=${item.itemId}`}
+      >
+        <Card className="course-card" key={item.itemId}>
+          <Card.Img className="course-card-image" variant="top" src={item.image["1"].url} />
+          <Card.Header className="course-card-header">
+            <h5 className="course-card-title">{item.title}</h5>
+          </Card.Header>
+        </Card>
+      </a>
     </div>
   );
 };
