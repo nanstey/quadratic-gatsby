@@ -50,7 +50,9 @@ export default function useItems() {
       axios.all(promises).then(
         axios.spread((...responses) => {
           const spreadItems = responses.flatMap((res) => {
-            return values(res.data.items).filter((item) => item.item_id !== 155);
+            return values(res.data.items).filter(
+              (item) => item.item_id !== 155 && item.visibility === "*",
+            );
           });
 
           setItems(itemFactory(sortBy(spreadItems, "pos").reverse()));

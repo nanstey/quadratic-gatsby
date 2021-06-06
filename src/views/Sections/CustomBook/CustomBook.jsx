@@ -18,6 +18,8 @@ import useItems from "../../../hooks/useItems";
 
 import "./CustomBook.scss";
 
+import notFoundImg from "../../../../content/assets/images/sections/education/image-not-found-scaled.png";
+
 const programs = ["LEGO", "Game Design", "Minecraft", "Science", "Stop Motion"];
 
 const CustomBook = () => {
@@ -116,7 +118,11 @@ const CourseCard = ({ item, active }) => {
       <a target="_blank" rel="noreferrer" href={itemLink} title={itemTooltip}>
         <Card className={`course-card ${activeClass}`} key={item.itemId}>
           {!item.available && <span className="sold-out">SOLD OUT</span>}
-          <Card.Img className="course-card-image" variant="top" src={item.image["1"].url} />
+          <Card.Img
+            className="course-card-image"
+            variant="top"
+            src={item.image["1"]?.url ?? notFoundImg}
+          />
           <Card.Body className="course-card-body">
             <div className="badge-container">
               <span className="badge badge-pill badge-primary">{`Ages ${item.ageMin}-${item.ageMax}`}</span>
