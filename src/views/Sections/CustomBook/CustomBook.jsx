@@ -20,12 +20,17 @@ import "./CustomBook.scss";
 
 import notFoundImg from "../../../../content/assets/images/sections/education/image-not-found-scaled.png";
 
-const programs = ["LEGO", "Game Design", "Minecraft", "Science", "Stop Motion"];
-
 const CustomBook = () => {
   const items = useItems();
   const [selectedAge, setSelectedAge] = useState(null);
   const [selectedProgram, setSelectedProgram] = useState(null);
+  
+  const programs = Array.from(
+    items.reduce((set, item) => {
+      item.tags.forEach((tag) => set.add(tag));
+      return set;
+    }, new Set()),
+  );
 
   function isActive(item) {
     return (

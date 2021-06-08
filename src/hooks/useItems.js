@@ -21,7 +21,7 @@ function itemFactory(items) {
       image: item.image,
       available: item.rate.available,
       price: item.rate.summary.price.total,
-      tags: item.tags.map((tag) => tag.name) ?? [],
+      tags: item.tags.filter((tag) => tag.visibility === "everyone").map((tag) => tag.name) ?? [],
     };
   });
 
