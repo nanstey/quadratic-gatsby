@@ -131,9 +131,7 @@ const CourseCard = ({ item, active }) => {
           <Card.Body className="course-card-body">
             <div className="badge-container">
               <span className="badge badge-pill badge-primary">{`Ages ${item.ageMin}-${item.ageMax}`}</span>
-              <span className="badge badge-pill badge-info">
-                {item.dateStart.format("MMM D")}-{item.dateEnd.format("D")}
-              </span>
+              <span className="badge badge-pill badge-info">{item.dateRange}</span>
               <span className="badge badge-pill badge-success">{item.price}</span>
             </div>
           </Card.Body>
@@ -150,6 +148,7 @@ CourseCard.propTypes = {
   item: PropTypes.shape({
     itemId: PropTypes.number,
     title: PropTypes.string,
+    dateRange: PropTypes.string,
     image: PropTypes.object,
     summary: PropTypes.string,
     details: PropTypes.string,
