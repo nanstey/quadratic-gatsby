@@ -5,13 +5,14 @@ import { sortBy, values, range } from "underscore";
 
 function itemFactory(items) {
   const newItems = items.map((item) => {
-    const [title, ageRange] = item.name.split(" // ").reverse();
+    const [title, ageRange, dateRange] = item.name.split(" // ").reverse();
     const [ageMin, ageMax] = ageRange ? ageRange.slice(5).split("-") : [6, 14];
 
     return {
       itemId: item.item_id,
       sku: item.sku,
       title,
+      dateRange,
       ageMin: Number(ageMin),
       ageMax: Number(ageMax),
       dateStart: dayjs(item.rate.start_date, "YYYYMMDD"),
@@ -29,7 +30,7 @@ function itemFactory(items) {
 }
 
 function getDateArray() {
-  const startDate = dayjs("2021-07-06", "YYYY-MM-D");
+  const startDate = dayjs("2021-07-09", "YYYY-MM-D");
 
   return range(8).map((i) => startDate.add(i * 7, "days"));
 }
