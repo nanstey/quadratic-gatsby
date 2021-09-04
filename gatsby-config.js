@@ -21,10 +21,6 @@ module.exports = {
         link: "/studio",
       },
       {
-        name: "Education",
-        link: "/education",
-      },
-      {
         name: "Services",
         link: "/services",
       },
