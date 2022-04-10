@@ -56,14 +56,14 @@ const Contact = ({ className, showBookButton }) => {
       {showBookButton && (
         <Row className="justify-content-center mb-5">
           <div style={{ textAlign: "center" }}>
-            <Button
+            {/* <Button
               size="xl"
               variant="primary"
               className="text-uppercase"
               onClick={scrollToSection}
             >
               {jumpToAnchorText}
-            </Button>
+            </Button> */}
           </div>
         </Row>
       )}

@@ -79,7 +79,7 @@ const MyNavbar = () => {
           {menuText}
           <Icon iconName="BarsIcon" />
         </Navbar.Toggle>
-        <Navbar.Collapse>
+        {/* <Navbar.Collapse>
           <Nav className="text-uppercase ml-auto">
             {menuLinks.map(({ name, link }) => (
               <NavItem key={name} to={link} onClick={closeMenu}>
@@ -87,7 +87,7 @@ const MyNavbar = () => {
               </NavItem>
             ))}
           </Nav>
-        </Navbar.Collapse>
+        </Navbar.Collapse> */}
       </Container>
     </Navbar>
   );

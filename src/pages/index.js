@@ -14,9 +14,6 @@ const IndexPage = () => {
     <>
       <Page>
         <Top />
-        <Events />
-        <Services className="bg-light" />
-        <Book />
         <Contact className="bg-light" />
       </Page>
     </>
