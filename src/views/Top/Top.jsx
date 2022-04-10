@@ -45,7 +45,7 @@ const Top = () => {
       imageFileName={imageFileName}
       header={header}
       subheader={subheader}
-      extraInfo={extraInfoPart}
+      // extraInfo={extraInfoPart}
     />
   );
 };
